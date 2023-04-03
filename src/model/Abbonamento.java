@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,4 +23,6 @@ public class Abbonamento {
 	private double prezzo;
 	private TipoAbbonamento durata;
 	private String tratta;
+	@ManyToOne
+	private Tessera n_tessera;
 }
