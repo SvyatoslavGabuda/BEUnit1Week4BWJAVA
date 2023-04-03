@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +21,10 @@ public class Biglietto {
 	private LocalDate data_emissione;
 	private double prezzo;
 	private int durata;
+	@ManyToOne
+	private Rivenditore vendutoDa;
+	@ManyToOne
+	private Utente utente;
 
 	public Biglietto() {}
 	@Override

@@ -25,4 +25,6 @@ public class Abbonamento {
 	private String tratta;
 	@ManyToOne
 	private Tessera n_tessera;
+	@ManyToOne
+	private Rivenditore vendutoDa;
 }

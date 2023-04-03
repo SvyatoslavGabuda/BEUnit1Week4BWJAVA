@@ -1,11 +1,14 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -18,8 +21,12 @@ public abstract class Rivenditore {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id_rivenditore;
-	private long biglietti_emessi;
+	private long n_biglietti_emessi;
 	private long abbonamenti_emessi;
+	@OneToMany(mappedBy = "vendutoDa")
+	private List<Biglietto> bigliettiEmessi;
+	@OneToMany(mappedBy = "vendutoDa")
+    private List<Abbonamento> abbonamentiEmessi;
 	
 //inserire nel dao
 	public Biglietto emettiBiglietto() {
