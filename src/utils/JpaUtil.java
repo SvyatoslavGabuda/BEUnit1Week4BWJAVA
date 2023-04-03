@@ -14,15 +14,18 @@ public class JpaUtil {
 	static {
 		try {
 			entityManagerFactory = Persistence
-					.createEntityManagerFactory("GestioneEventi");
+					.createEntityManagerFactory("BEUnit1Week4BWJAVA");
 		} catch (Throwable ex) {
 			logger.error("Initial EntityManagerFactory creation failed.", ex);
 			throw new ExceptionInInitializerError(ex);
 		}
 	}
 
+	
 	public static EntityManagerFactory getEntityManagerFactory() {
 		return entityManagerFactory;
 	}
+	
+	
 
 }
