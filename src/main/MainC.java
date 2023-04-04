@@ -67,7 +67,26 @@ public class MainC {
 //		docDao.salva(ab1);
 		
 		
-		
+		/* 
+		 * per creare un bilgietto serve :
+		 * Utente-Rivenditore(biglietti creati ++??)-durata
+		 * per creare un Abbonamento serve :
+           -Tessera(valida)-Rivenditore(abbcreati ++??) -Utente
+           -TipoAbbonamento
+           -tratta
+		 * 
+		 * per Creare la tessera serve Utente e data emissione default(LocalData.now()??)
+		 * 
+		 * creare un metodo per la creazione/aggiunta di Utente 
+		 * creare un metodo per la creazione/aggiunta di un rivenditore 
+		 * creare un metodo che crei la tessera chiedendo un utente?
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * */
 		
 		
 		
