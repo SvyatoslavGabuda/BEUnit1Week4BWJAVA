@@ -1,5 +1,7 @@
 package dao;
 
+import java.time.LocalDate;
+
 import javax.persistence.EntityManager;
 
 import model.Abbonamento;
@@ -66,6 +68,7 @@ public class RivenditoreDao {
 		nuovoBiglietto.setVendutoDa(vendutoDa);
 		nuovoBiglietto.setPrezzo(prezzo);
 		nuovoBiglietto.setDurata(prezzo);
+		nuovoBiglietto.setData_emissione(LocalDate.now());
 		UtenteDao cliente = new UtenteDao();		
 		nuovoBiglietto.setUtente(cliente.getByID(clienteId));
 		DocViaggioDao biglietto = new DocViaggioDao();
@@ -96,6 +99,7 @@ public class RivenditoreDao {
 		nuovoAbbonamento.set_tessera(tesseraDao.getByID(idTessera));
 		nuovoAbbonamento.setTratta(tratta);
 		nuovoAbbonamento.setDurata(tipoAbbonamento);
+		nuovoAbbonamento.setData_emissione(LocalDate.now());
 		switch (tipoAbbonamento) {
 		case SETTIMANALE: 
 		
@@ -140,5 +144,7 @@ public class RivenditoreDao {
 		// tieni abbonamanto
 
 	}
+	
+	
 
 }

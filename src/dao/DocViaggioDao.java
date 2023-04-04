@@ -1,6 +1,10 @@
 package dao;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import model.DocViaggio;
 
@@ -55,6 +59,22 @@ public class DocViaggioDao {
 		} finally {
 			em.close();
 		}
+	}
+	
+	public List<DocViaggio> trovaDocinBaseAllaData(LocalDate inizio, LocalDate fine) {
+		EntityManager em= JpaUtil.getEntityManagerFactory().createEntityManager();
+		//trovare i docviaggio tra due date 
+		Query q = em.createQuery("SELECT e FROM DocViaggio e WHERE e.data_emissione BETWEEN :dataInizio AND :datafine");
+		
+		q.setParameter("dataInizio", inizio);
+		q.setParameter("datafine",fine);
+		try {
+			return q.getResultList();
+			
+		} finally {
+			em.close();
+		}
+		
 	}
 
 }

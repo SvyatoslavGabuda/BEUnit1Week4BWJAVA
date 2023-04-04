@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -21,9 +22,12 @@ public class Tessera {
 	private LocalDate data_emissione;
 	private LocalDate data_rinnovo;
 	private LocalDate data_scadenza;
-	@OneToOne(mappedBy = "tessera",cascade = CascadeType.PERSIST)
+	
+	@OneToOne
 	private Utente utente;
+	
 	@OneToMany(mappedBy="tesseraAssociata",cascade = CascadeType.REMOVE)
+	
 	private List<Abbonamento> abbonamenti;
 
 	public Tessera() {

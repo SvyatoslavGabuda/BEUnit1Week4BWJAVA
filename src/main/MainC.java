@@ -13,6 +13,7 @@ import model.RivAutoMatico;
 import model.Rivenditore;
 import model.Tessera;
 import model.Utente;
+import utils.TipoAbbonamento;
 
 public class MainC {
 
@@ -23,12 +24,12 @@ public class MainC {
 		TesseraDao tessDao = new TesseraDao();
 		
 		//creazione tre utenti
-//		Utente u1 = new Utente();
-//		u1.setNome("mario");
-//		Utente u2 = new Utente();
-//		u2.setNome("Luca");
-//		Utente u3 = new Utente();
-//		u3.setNome("giuseppe");
+		Utente u1 = new Utente();
+		u1.setNome("mario");
+		Utente u2 = new Utente();
+		u2.setNome("Luca");
+		Utente u3 = new Utente();
+		u3.setNome("giuseppe");
 //		
 //		utenteDao.salva(u1);
 //		utenteDao.salva(u2);
@@ -44,15 +45,42 @@ public class MainC {
 		t1.setData_emissione(LocalDate.of(2023,1,2));
 		Tessera t2 = new Tessera();
 		t2.setUtente(utenteLetto2);
-		Tessera t3 = new Tessera();
-		t3.setUtente(utenteLetto3);
+		t2.setData_emissione(LocalDate.of(2023,1,2));
+		//tessDao.salva(t2);
+		System.out.println(utenteLetto1);
 		
-		tessDao.salva(t1);
+		System.out.println(utenteLetto1.getTessera());
+		System.out.println(utenteLetto2.getTessera());
+		
+//		Tessera t2 = new Tessera();
+//		t2.setUtente(utenteLetto2);
+//		t2.setData_emissione(LocalDate.of(2023,1,2));
+//		
+//		Tessera t3 = new Tessera();
+//		t3.setUtente(utenteLetto3);
+//		t3.setData_emissione(LocalDate.of(2023,1,2));
+		
+//		tessDao.salva(t1);
 //		tessDao.salva(t2);
+//		
 //		tessDao.salva(t3);
+//		
+//		utenteLetto1.setTessera(t1);
+//		
+//		utenteDao.update(utenteLetto1);
+//		
+//		utenteLetto3.setTessera(t3);
+//		utenteDao.update(utenteLetto3);
+//		
+//		Rivenditore r1 = new RivAutoMatico();
+//		rivDao.salva(r1);
+//		
+//		Rivenditore rivLetto = rivDao.getByID(1);
+//		
+//		rivDao.emettiAbbonamento(rivLetto, 1l, "milano-palermo", TipoAbbonamento.ANNUALE);
+//		rivDao.emettiBiglietto(rivLetto, 10.5, 2l);
 		
-		
-		
+
 		
 //		Rivenditore r1 = new RivAutoMatico();  
 		
