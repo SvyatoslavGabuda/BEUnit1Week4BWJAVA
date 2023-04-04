@@ -2,6 +2,7 @@ package model;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +21,7 @@ public class Utente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 private long id_utente;
 private String nome;
-@OneToOne
+@OneToOne(cascade = CascadeType.ALL)
 private Tessera tessera;
 @OneToMany(mappedBy = "utente")
 private Set<Biglietto> biglietti_aquistati;
