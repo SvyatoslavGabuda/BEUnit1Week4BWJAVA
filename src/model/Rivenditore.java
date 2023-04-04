@@ -17,7 +17,7 @@ public abstract class Rivenditore {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id_rivenditore;
-	private long n_biglietti_emessi;
+	private long n_biglietti_emessi = 0;
 	private long abbonamenti_emessi;
 	@OneToMany(mappedBy = "vendutoDa")
 	private List<Biglietto> bigliettiEmessi;
@@ -25,27 +25,13 @@ public abstract class Rivenditore {
     private List<Abbonamento> abbonamentiEmessi;
 	
 //inserire nel dao
-	public Biglietto emettiBiglietto() {
-		//creazione biglietto senza id
-		//poi lo carichi sul database
-		//lo scarischi
-		
-		//metodo crea biglietto
-		// beglietti emessi ++
-		// inserisci nome
-		// inserisci destinazione
-		// paga
-		// tieni biglietto
-		return null;
-	};
+	
+	
 
-	public Abbonamento emettiAbbonamento() {
-		// inserisci nome
-		// inserisci n tessera
-		// inserisci tratta
-		// paga
-		// tieni abbonamanto
-		return null;
+
+	
+	public void aggiungiAiBigliettiEmessi(Biglietto biglietto) {
+		this.bigliettiEmessi.add(biglietto);
 	}
 
 	

@@ -23,7 +23,7 @@ public class Tessera {
 	private LocalDate data_scadenza;
 	@OneToOne(mappedBy = "tessera")
 	private Utente utente;
-	@OneToMany(mappedBy="n_tessera",cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy="tessera",cascade = CascadeType.REMOVE)
 	private List<Abbonamento> abbonamenti;
 
 	public Tessera() {

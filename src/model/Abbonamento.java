@@ -18,7 +18,7 @@ public class Abbonamento extends DocViaggio {
 	private TipoAbbonamento durata;
 	private String tratta;
 	@ManyToOne
-	private Tessera n_tessera;
+	private Tessera tessera;
 	
 	//GETTER&SETTER
 	public TipoAbbonamento getDurata() {
@@ -33,12 +33,11 @@ public class Abbonamento extends DocViaggio {
 	public void setTratta(String tratta) {
 		this.tratta = tratta;
 	}
-	public Tessera getN_tessera() {
-		return n_tessera;
+	public Tessera get_tessera() {
+		return tessera;
 	}
-	public void setN_tessera(Tessera n_tessera) {
-		this.n_tessera = n_tessera;
+	public void set_tessera(Tessera tessera) {
+		this.tessera = tessera;
 	}
-	
 	
 }

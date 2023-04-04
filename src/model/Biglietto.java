@@ -1,15 +1,12 @@
 package model;
 
 
-
 import javax.persistence.Entity;
 
 
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 public class Biglietto extends DocViaggio{
 	
@@ -18,6 +15,8 @@ public class Biglietto extends DocViaggio{
 	
 
 	public Biglietto() {}
+	
+	
 
 
 	//GETTER&SETTER
@@ -25,11 +24,10 @@ public class Biglietto extends DocViaggio{
 		return durata;
 	}
 
-
-	public void setDurata(int durata) {
-		this.durata = durata;
+	public void setDurata(double prezzo) {
+		
+		this.durata = (int) (prezzo * 60);		
+		
 	}
 	
-	
-
 }
