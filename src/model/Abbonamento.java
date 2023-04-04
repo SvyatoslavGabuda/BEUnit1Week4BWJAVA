@@ -11,13 +11,33 @@ import lombok.Getter;
 import lombok.Setter;
 import utils.TipoAbbonamento;
 
-@Getter
-@Setter
+
 @Entity
 public class Abbonamento extends DocViaggio {
 	
 	private TipoAbbonamento durata;
 	private String tratta;
 	@ManyToOne
-	private Tessera n_tessera;
+	private Tessera tesseraAssociata;
+	
+	//GETTER&SETTER
+	public TipoAbbonamento getDurata() {
+		return durata;
+	}
+	public void setDurata(TipoAbbonamento durata) {
+		this.durata = durata;
+	}
+	public String getTratta() {
+		return tratta;
+	}
+	public void setTratta(String tratta) {
+		this.tratta = tratta;
+	}
+	public Tessera get_tessera() {
+		return tesseraAssociata;
+	}
+	public void set_tessera(Tessera tessera) {
+		this.tesseraAssociata = tessera;
+	}
+	
 }

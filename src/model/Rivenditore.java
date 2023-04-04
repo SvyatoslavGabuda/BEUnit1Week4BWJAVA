@@ -10,18 +10,14 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Rivenditore {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id_rivenditore;
-	private long n_biglietti_emessi;
+	private long n_biglietti_emessi = 0;
 	private long abbonamenti_emessi;
 	@OneToMany(mappedBy = "vendutoDa")
 	private List<Biglietto> bigliettiEmessi;
@@ -29,26 +25,52 @@ public abstract class Rivenditore {
     private List<Abbonamento> abbonamentiEmessi;
 	
 //inserire nel dao
-	public Biglietto emettiBiglietto() {
-		//creazione biglietto senza id
-		//poi lo carichi sul database
-		//lo scarischi
-		
-		//metodo crea biglietto
-		// beglietti emessi ++
-		// inserisci nome
-		// inserisci destinazione
-		// paga
-		// tieni biglietto
-		return null;
-	};
+	
+	
 
-	public Abbonamento emettiAbbonamento() {
-		// inserisci nome
-		// inserisci n tessera
-		// inserisci tratta
-		// paga
-		// tieni abbonamanto
-		return null;
+
+	
+	public void aggiungiAiBigliettiEmessi(Biglietto biglietto) {
+		this.bigliettiEmessi.add(biglietto);
+	}
+
+	
+	//GETTER&SETTER
+	public long getN_biglietti_emessi() {
+		return n_biglietti_emessi;
+	}
+
+	public void setN_biglietti_emessi(long n_biglietti_emessi) {
+		this.n_biglietti_emessi = n_biglietti_emessi;
+	}
+
+	public long getAbbonamenti_emessi() {
+		return abbonamenti_emessi;
+	}
+
+	public void setAbbonamenti_emessi(long abbonamenti_emessi) {
+		this.abbonamenti_emessi = abbonamenti_emessi;
+	}
+
+	public List<Biglietto> getBigliettiEmessi() {
+		return bigliettiEmessi;
+	}
+
+	public void setBigliettiEmessi(List<Biglietto> bigliettiEmessi) {
+		this.bigliettiEmessi = bigliettiEmessi;
+	}
+
+	public List<Abbonamento> getAbbonamentiEmessi() {
+		return abbonamentiEmessi;
+	}
+
+	public void setAbbonamentiEmessi(List<Abbonamento> abbonamentiEmessi) {
+		this.abbonamentiEmessi = abbonamentiEmessi;
+	}
+
+	public long getId_rivenditore() {
+		return id_rivenditore;
 	};
+	
+	
 }
