@@ -17,25 +17,50 @@ import model.Utente;
 public class MainC {
 
 	public static void main(String[] args) {
-		Utente u1 = new Utente();
-		u1.setNome("mario");
-		
-		Rivenditore r1 = new RivAutoMatico();  
-		
-		
-	    DocViaggio d1 = new Biglietto();
-	    d1.setPrezzo(10.2);
-	    
-	    DocViaggio ab1 = new Abbonamento();
-	
-	    
-	    Tessera t1 = new Tessera();
-		
 		UtenteDao utenteDao = new UtenteDao();
 		RivenditoreDao rivDao = new RivenditoreDao();
 		DocViaggioDao docDao = new DocViaggioDao();
 		TesseraDao tessDao = new TesseraDao();
 		
+		//creazione tre utenti
+//		Utente u1 = new Utente();
+//		u1.setNome("mario");
+//		Utente u2 = new Utente();
+//		u2.setNome("Luca");
+//		Utente u3 = new Utente();
+//		u3.setNome("giuseppe");
+//		
+//		utenteDao.salva(u1);
+//		utenteDao.salva(u2);
+//		utenteDao.salva(u3);
+		
+		//lettura utenti
+		Utente utenteLetto1 = utenteDao.getByID(1);
+		Utente utenteLetto2 = utenteDao.getByID(2);
+		Utente utenteLetto3 = utenteDao.getByID(3);
+		// creazione tessere
+		Tessera t1 = new Tessera();
+		t1.setUtente(utenteLetto1);
+		t1.setData_emissione(LocalDate.of(2023,1,2));
+		Tessera t2 = new Tessera();
+		t2.setUtente(utenteLetto2);
+		Tessera t3 = new Tessera();
+		t3.setUtente(utenteLetto3);
+		
+		tessDao.salva(t1);
+//		tessDao.salva(t2);
+//		tessDao.salva(t3);
+		
+		
+		
+		
+//		Rivenditore r1 = new RivAutoMatico();  
+		
+		
+	    
+	   
+	
+	    
 		
 //		
 //		

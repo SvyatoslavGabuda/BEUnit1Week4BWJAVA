@@ -1,3 +1,4 @@
 #Ignore META-INF 
 src/META-INF/
 target/classes/META-INF/persistence.xml
+target/classes/META-INF/persistence.xml
