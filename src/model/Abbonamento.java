@@ -18,7 +18,7 @@ public class Abbonamento extends DocViaggio {
 	private TipoAbbonamento durata;
 	private String tratta;
 	@ManyToOne
-	private Tessera tessera;
+	private Tessera tesseraAssociata;
 	
 	//GETTER&SETTER
 	public TipoAbbonamento getDurata() {
@@ -34,10 +34,10 @@ public class Abbonamento extends DocViaggio {
 		this.tratta = tratta;
 	}
 	public Tessera get_tessera() {
-		return tessera;
+		return tesseraAssociata;
 	}
 	public void set_tessera(Tessera tessera) {
-		this.tessera = tessera;
+		this.tesseraAssociata = tessera;
 	}
 	
 }
