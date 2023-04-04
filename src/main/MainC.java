@@ -35,9 +35,9 @@ public class MainC {
 //		utenteDao.salva(u3);
 		
 		//lettura utenti
-		Utente utenteLetto1 = utenteDao.getByID(1);
-		Utente utenteLetto2 = utenteDao.getByID(2);
-		Utente utenteLetto3 = utenteDao.getByID(3);
+		Utente utenteLetto1 = utenteDao.getByID(1l);
+		Utente utenteLetto2 = utenteDao.getByID(2l);
+		Utente utenteLetto3 = utenteDao.getByID(3l);
 		// creazione tessere
 		Tessera t1 = new Tessera();
 		t1.setUtente(utenteLetto1);
