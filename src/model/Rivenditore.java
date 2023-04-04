@@ -30,6 +30,10 @@ public abstract class Rivenditore {
 	
 //inserire nel dao
 	public Biglietto emettiBiglietto() {
+		//creazione biglietto senza id
+		//poi lo carichi sul database
+		//lo scarischi
+		
 		//metodo crea biglietto
 		// beglietti emessi ++
 		// inserisci nome

@@ -16,15 +16,9 @@ import utils.TipoAbbonamento;
 @Getter
 @Setter
 @Entity
-public class Abbonamento {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private LocalDate data_emissione;
-	private double prezzo;
+public class Abbonamento extends DocViaggio {
+	
 	private TipoAbbonamento durata;
 	private String tratta;
-	@ManyToOne
-	private Tessera n_tessera;
-	@ManyToOne
-	private Rivenditore vendutoDa;
+	
 }
