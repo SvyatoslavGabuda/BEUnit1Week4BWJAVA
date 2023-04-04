@@ -1,11 +1,9 @@
 package model;
 
-import java.time.LocalDate;
+
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
 import javax.persistence.ManyToOne;
 
 
@@ -20,5 +18,6 @@ public class Abbonamento extends DocViaggio {
 	
 	private TipoAbbonamento durata;
 	private String tratta;
-	
+	@ManyToOne
+	private Tessera n_tessera;
 }
