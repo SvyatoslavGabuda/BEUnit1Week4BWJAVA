@@ -15,6 +15,12 @@ import utils.TipoAbbonamento;
 @Entity
 public class Abbonamento extends DocViaggio {
 	
+	@Override
+	public String toString() {
+		return "Abbonamento [durata=" + durata + ", tratta=" + tratta + ", tesseraAssociata=" + tesseraAssociata
+				+ ", getData_emissione()=" + getData_emissione() + ", getPrezzo()=" + getPrezzo() + ", getVendutoDa()="
+				+ getVendutoDa() + ", getUtente()=" + getUtente() + ", getId_biglietto()=" + getId_biglietto() + "]";
+	}
 	private TipoAbbonamento durata;
 	private String tratta;
 	@ManyToOne

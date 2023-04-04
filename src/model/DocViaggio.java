@@ -33,6 +33,11 @@ public abstract class DocViaggio {
 	public void setData_emissione(LocalDate data_emissione) {
 		this.data_emissione = data_emissione;
 	}
+	@Override
+	public String toString() {
+		return "DocViaggio [id_biglietto=" + id_biglietto + ", data_emissione=" + data_emissione + ", prezzo=" + prezzo
+				+ ", vendutoDa=" + vendutoDa + ", utente=" + utente + "]";
+	}
 	public double getPrezzo() {
 		return prezzo;
 	}

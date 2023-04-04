@@ -35,6 +35,14 @@ public abstract class Rivenditore {
 	}
 
 	
+	@Override
+	public String toString() {
+		return "Rivenditore [id_rivenditore=" + id_rivenditore + ", n_biglietti_emessi=" + n_biglietti_emessi
+				+ ", abbonamenti_emessi=" +  ", bigliettiEmessi=" 
+				+ ", abbonamentiEmessi="  + "]";
+	}
+
+
 	//GETTER&SETTER
 	public long getN_biglietti_emessi() {
 		return n_biglietti_emessi;

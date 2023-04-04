@@ -11,6 +11,13 @@ import lombok.Setter;
 public class Biglietto extends DocViaggio{
 	
 	
+	@Override
+	public String toString() {
+		return "Biglietto [durata=" + durata + ", getData_emissione()=" + getData_emissione() + ", getPrezzo()="
+				+ getPrezzo() + ", getVendutoDa()=" + getVendutoDa() + ", getUtente()=" + getUtente()
+				+ ", getId_biglietto()=" + getId_biglietto() + "]";
+	}
+
 	private int durata;
 	
 

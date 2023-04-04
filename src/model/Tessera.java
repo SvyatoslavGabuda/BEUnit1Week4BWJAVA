@@ -26,9 +26,16 @@ public class Tessera {
 	@OneToOne
 	private Utente utente;
 	
-	@OneToMany(mappedBy="tesseraAssociata",cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy="tesseraAssociata")
 	
 	private List<Abbonamento> abbonamenti;
+
+	@Override
+	public String toString() {
+		return "Tessera [id_tessera=" + id_tessera + ", data_emissione=" + data_emissione + ", data_rinnovo="
+				+ data_rinnovo + ", data_scadenza=" + data_scadenza + ", " + ", abbonamenti="
+				+  "]";
+	}
 
 	public Tessera() {
 	}

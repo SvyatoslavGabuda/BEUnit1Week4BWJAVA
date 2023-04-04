@@ -35,6 +35,11 @@ private Set<Biglietto> biglietti_aquistati;
 public String getNome() {
 	return nome;
 }
+@Override
+public String toString() {
+	return "Utente [id_utente=" + id_utente + ", nome=" + nome + ", tessera=" + tessera + ", biglietti_aquistati="
+			 + "]";
+}
 public void setNome(String nome) {
 	this.nome = nome;
 }

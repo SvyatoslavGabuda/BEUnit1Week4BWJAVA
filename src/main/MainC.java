@@ -30,10 +30,12 @@ public class MainC {
 		u2.setNome("Luca");
 		Utente u3 = new Utente();
 		u3.setNome("giuseppe");
+		Utente u4 = new Utente();
+		u4.setNome("giuseppe2");
 //		
 //		utenteDao.salva(u1);
 //		utenteDao.salva(u2);
-//		utenteDao.salva(u3);
+ //	utenteDao.salva(u4);
 		
 		//lettura utenti
 		Utente utenteLetto1 = utenteDao.getByID(1l);
@@ -47,10 +49,15 @@ public class MainC {
 		t2.setUtente(utenteLetto2);
 		t2.setData_emissione(LocalDate.of(2023,1,2));
 		//tessDao.salva(t2);
+		//tessDao.salva(t1);
 		System.out.println(utenteLetto1);
+		System.out.println(utenteLetto2);
+		System.out.println(utenteLetto3);
 		
 		System.out.println(utenteLetto1.getTessera());
 		System.out.println(utenteLetto2.getTessera());
+		System.out.println(docDao.trovaDocinBaseAllaData(LocalDate.of(2020, 1, 1), LocalDate.of(2024, 1, 1)));
+		//docDao.trovaDocinBaseAllaData(LocalDate.of(2020, 1, 1), LocalDate.of(2024, 1, 1));
 		
 //		Tessera t2 = new Tessera();
 //		t2.setUtente(utenteLetto2);
