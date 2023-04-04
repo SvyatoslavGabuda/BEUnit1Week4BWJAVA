@@ -36,39 +36,7 @@ public class MainC {
 		DocViaggioDao docDao = new DocViaggioDao();
 		TesseraDao tessDao = new TesseraDao();
 		
-		//rivDao.salva(r1);
-<<<<<<< HEAD
-		//utenteDao.salva(u1);
-=======
-		utenteDao.salva(u1);
->>>>>>> svy-test-
-		Rivenditore letto =rivDao.getByID(1l);
-		d1.setVendutoDa(letto);
-		Utente lettoUtente = utenteDao.getByID(1l);
-		d1.setUtente(lettoUtente);
 		
-		t1.setUtente(lettoUtente);
-		t1.setData_emissione(LocalDate.of(2023, 3, 3));
-<<<<<<< HEAD
-		tessDao.salva(t1);
-		Tessera tessLetta= tessDao.getByID(1);
-		if(ab1 instanceof Abbonamento ) {
-			((Abbonamento) ab1).setN_tessera(tessLetta);
-=======
-		//tessDao.salva(t1);
-		Tessera tessLetta= tessDao.getByID(1);
-		if(ab1 instanceof Abbonamento ) {
-			((Abbonamento) ab1).set_tessera(tessLetta);
->>>>>>> svy-test-
-			
-		}
-		
-		((Abbonamento) ab1).setTratta("Milano-Palermo");
-		
-<<<<<<< HEAD
-		
-		utenteDao.update(lettoUtente);
-		docDao.update(ab1);
 //		
 //		
 ////		docDao.salva(d1);
@@ -97,20 +65,7 @@ public class MainC {
 		 * 
 		 * 
 		 * */
-		
-=======
-		rivDao.emettiBiglietto(letto, 2, 1l);
-		
-//		utenteDao.update(lettoUtente);
-//		docDao.update(ab1);
-//		
-//		
-//		docDao.salva(d1);
-//		ab1.setPrezzo(500.4);
-//		ab1.setUtente(lettoUtente);
-//		ab1.setVendutoDa(letto);
-//		docDao.salva(ab1);
->>>>>>> svy-test-
+
 		
 		
 		/* 
