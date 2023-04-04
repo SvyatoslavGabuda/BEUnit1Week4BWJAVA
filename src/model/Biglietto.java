@@ -18,6 +18,18 @@ public class Biglietto extends DocViaggio{
 	
 
 	public Biglietto() {}
+
+
+	//GETTER&SETTER
+	public int getDurata() {
+		return durata;
+	}
+
+
+	public void setDurata(int durata) {
+		this.durata = durata;
+	}
+	
 	
 
 }

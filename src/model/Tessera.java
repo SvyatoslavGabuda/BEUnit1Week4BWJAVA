@@ -11,11 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 public class Tessera {
 	@Id
@@ -42,4 +38,52 @@ public class Tessera {
 	}
 	// metodo aggiorna (dao)
 
+	
+	//GETTER&SETTER
+	public LocalDate getData_emissione() {
+		return data_emissione;
+	}
+
+	public void setData_emissione(LocalDate data_emissione) {
+		this.data_emissione = data_emissione;
+	}
+
+	public LocalDate getData_rinnovo() {
+		return data_rinnovo;
+	}
+
+	public void setData_rinnovo(LocalDate data_rinnovo) {
+		this.data_rinnovo = data_rinnovo;
+	}
+
+	public LocalDate getData_scadenza() {
+		return data_scadenza;
+	}
+
+	public void setData_scadenza(LocalDate data_scadenza) {
+		this.data_scadenza = data_scadenza;
+	}
+
+	public Utente getUtente() {
+		return utente;
+	}
+
+	public void setUtente(Utente utente) {
+		this.utente = utente;
+	}
+
+	public List<Abbonamento> getAbbonamenti() {
+		return abbonamenti;
+	}
+
+	public void setAbbonamenti(List<Abbonamento> abbonamenti) {
+		this.abbonamenti = abbonamenti;
+	}
+
+	public long getId_tessera() {
+		return id_tessera;
+	}
+
+	
+	
 }

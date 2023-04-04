@@ -10,11 +10,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Rivenditore {
@@ -50,5 +46,45 @@ public abstract class Rivenditore {
 		// paga
 		// tieni abbonamanto
 		return null;
+	}
+
+	
+	//GETTER&SETTER
+	public long getN_biglietti_emessi() {
+		return n_biglietti_emessi;
+	}
+
+	public void setN_biglietti_emessi(long n_biglietti_emessi) {
+		this.n_biglietti_emessi = n_biglietti_emessi;
+	}
+
+	public long getAbbonamenti_emessi() {
+		return abbonamenti_emessi;
+	}
+
+	public void setAbbonamenti_emessi(long abbonamenti_emessi) {
+		this.abbonamenti_emessi = abbonamenti_emessi;
+	}
+
+	public List<Biglietto> getBigliettiEmessi() {
+		return bigliettiEmessi;
+	}
+
+	public void setBigliettiEmessi(List<Biglietto> bigliettiEmessi) {
+		this.bigliettiEmessi = bigliettiEmessi;
+	}
+
+	public List<Abbonamento> getAbbonamentiEmessi() {
+		return abbonamentiEmessi;
+	}
+
+	public void setAbbonamentiEmessi(List<Abbonamento> abbonamentiEmessi) {
+		this.abbonamentiEmessi = abbonamentiEmessi;
+	}
+
+	public long getId_rivenditore() {
+		return id_rivenditore;
 	};
+	
+	
 }

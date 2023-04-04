@@ -12,13 +12,6 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 
 
-import lombok.Getter;
-import lombok.Setter;
-
-
-@Getter
-@Setter
-
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo_documento_viaggio")
@@ -32,4 +25,35 @@ public abstract class DocViaggio {
 	private Rivenditore vendutoDa;
 	@ManyToOne
 	private Utente utente;
+	
+	//GETTER&SETTER
+	public LocalDate getData_emissione() {
+		return data_emissione;
+	}
+	public void setData_emissione(LocalDate data_emissione) {
+		this.data_emissione = data_emissione;
+	}
+	public double getPrezzo() {
+		return prezzo;
+	}
+	public void setPrezzo(double prezzo) {
+		this.prezzo = prezzo;
+	}
+	public Rivenditore getVendutoDa() {
+		return vendutoDa;
+	}
+	public void setVendutoDa(Rivenditore vendutoDa) {
+		this.vendutoDa = vendutoDa;
+	}
+	public Utente getUtente() {
+		return utente;
+	}
+	public void setUtente(Utente utente) {
+		this.utente = utente;
+	}
+	public long getId_biglietto() {
+		return id_biglietto;
+	}
+	
+	
 }
