@@ -2,6 +2,10 @@ package main;
 
 import java.time.LocalDate;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import antlr.collections.List;
 import dao.DocViaggioDao;
 import dao.RivenditoreDao;
 import dao.TesseraDao;
@@ -13,10 +17,11 @@ import model.RivAutoMatico;
 import model.Rivenditore;
 import model.Tessera;
 import model.Utente;
+import utils.JpaUtil;
 import utils.TipoAbbonamento;
 
 public class MainC {
-
+	private static final Logger l = LoggerFactory.getLogger(JpaUtil.class);
 	public static void main(String[] args) {
 		UtenteDao utenteDao = new UtenteDao();
 		RivenditoreDao rivDao = new RivenditoreDao();
@@ -56,7 +61,11 @@ public class MainC {
 		
 		System.out.println(utenteLetto1.getTessera());
 		System.out.println(utenteLetto2.getTessera());
+		System.out.println("primo");
 		System.out.println(docDao.trovaDocinBaseAllaData(LocalDate.of(2020, 1, 1), LocalDate.of(2024, 1, 1)));
+		System.out.println("secondo:");
+	
+		System.out.println(docDao.trovaDocinBaseDistibutoreInPeriodoTempo(LocalDate.of(2020, 1, 1), LocalDate.of(2024, 1, 1),1l));
 		//docDao.trovaDocinBaseAllaData(LocalDate.of(2020, 1, 1), LocalDate.of(2024, 1, 1));
 		
 //		Tessera t2 = new Tessera();

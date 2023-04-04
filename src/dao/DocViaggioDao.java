@@ -6,8 +6,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import model.Abbonamento;
 import model.DocViaggio;
-
+import model.Rivenditore;
 import utils.JpaUtil;
 
 public class DocViaggioDao {
@@ -75,6 +76,35 @@ public class DocViaggioDao {
 			em.close();
 		}
 		
+	}
+	public List<DocViaggio> trovaDocinBaseDistibutoreInPeriodoTempo(LocalDate inizio, LocalDate fine,long id) {
+		EntityManager em= JpaUtil.getEntityManagerFactory().createEntityManager();
+		//trovare i docviaggio tra due date 
+//		RivenditoreDao rivDao = new RivenditoreDao();
+//		Rivenditore r = rivDao.getByID(id);
+		Query q = em.createQuery("SELECT e FROM DocViaggio e WHERE e.data_emissione BETWEEN :dataInizio AND :datafine "
+				+ "AND e.vendutoDa = (SELECT r FROM Rivenditore r Where  r.id = :id)");
+		//e.vendutoDa = :Venditore
+		q.setParameter("dataInizio", inizio);
+		q.setParameter("datafine",fine);
+		q.setParameter("id",id);
+		//q.setParameter("Venditore",r);
+		try {
+			return q.getResultList();
+			
+		} finally {
+			em.close();
+		}
+		
+	}
+	
+	public void controllaAbbonamento(Abbonamento a) {
+		if(LocalDate.now().isBefore(a.getScandenza()) ) {
+			System.out.println("l'abbonamento è valido");
+			
+		}else {
+			System.out.println("L'abbonamento è scaduto");
+		}
 	}
 
 }

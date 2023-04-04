@@ -2,6 +2,8 @@ package model;
 
 
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 
 import javax.persistence.ManyToOne;
@@ -25,8 +27,15 @@ public class Abbonamento extends DocViaggio {
 	private String tratta;
 	@ManyToOne
 	private Tessera tesseraAssociata;
+	private LocalDate scandenza;
 	
 	//GETTER&SETTER
+	public LocalDate getScandenza() {
+		return this.scandenza;
+	}
+	public void setScandenza(LocalDate a) {
+		this.scandenza = a;
+	}
 	public TipoAbbonamento getDurata() {
 		return durata;
 	}

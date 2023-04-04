@@ -69,6 +69,7 @@ public class RivenditoreDao {
 		nuovoBiglietto.setPrezzo(prezzo);
 		nuovoBiglietto.setDurata(prezzo);
 		nuovoBiglietto.setData_emissione(LocalDate.now());
+	
 		UtenteDao cliente = new UtenteDao();		
 		nuovoBiglietto.setUtente(cliente.getByID(clienteId));
 		DocViaggioDao biglietto = new DocViaggioDao();
@@ -100,30 +101,36 @@ public class RivenditoreDao {
 		nuovoAbbonamento.setTratta(tratta);
 		nuovoAbbonamento.setDurata(tipoAbbonamento);
 		nuovoAbbonamento.setData_emissione(LocalDate.now());
+		
 		switch (tipoAbbonamento) {
 		case SETTIMANALE: 
 		
 		{nuovoAbbonamento.setPrezzo(500);
+		nuovoAbbonamento.setScandenza(nuovoAbbonamento.getData_emissione().plusDays(7));
 			break;	
 		} 
 		
 		case MENSILE: {
 			nuovoAbbonamento.setPrezzo(1000);
+			nuovoAbbonamento.setScandenza(nuovoAbbonamento.getData_emissione().plusMonths(1));
 			break;
 		}
 		
 		case TRIMESTRALE: {
 			nuovoAbbonamento.setPrezzo(3000);
+			nuovoAbbonamento.setScandenza(nuovoAbbonamento.getData_emissione().plusMonths(3));
 			break;
 		}
 		
 		case SEMESTRALE: {
 			nuovoAbbonamento.setPrezzo(5500);
+			nuovoAbbonamento.setScandenza(nuovoAbbonamento.getData_emissione().plusMonths(6));
 			break;
 		}
 		
 		case ANNUALE: {
 			nuovoAbbonamento.setPrezzo(10000);
+			nuovoAbbonamento.setScandenza(nuovoAbbonamento.getData_emissione().plusYears(1));
 			break;
 		}
 		
