@@ -5,10 +5,11 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-
+import modelVeicoli.Manutenzione;
 import model.Biglietto;
 import modelVeicoli.Mezzo;
 import utils.JpaUtil;
+import utils.StatoOperativo;
 
 public class MezzoDao {
 	public void salva(Mezzo m) {
@@ -107,6 +108,50 @@ public class MezzoDao {
 		}
 	}
 
-	public void manutenzione() {
+	public void mandaInManutenzione(Mezzo m) {
+		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+
+		try {
+			if(m.getStatoOperativo().equals(StatoOperativo.SERVIZIO)) {
+				m.setStatoOperativo(StatoOperativo.MANUTENZIONE);
+				MezzoDao mezzoDao = new MezzoDao();
+				mezzoDao.update(m);
+				Manutenzione manutenzione = new Manutenzione();
+				manutenzione.setInizioManutenzione(LocalDate.now());
+				manutenzione.setFineManutenzione(manutenzione.getInizioManutenzione().plusDays(10));
+				manutenzione.setMezzo(m);
+				ManutenzioneDao manDao = new ManutenzioneDao();
+				manDao.salva(manutenzione);
+				System.out.println("Mezzo inviato in manutenzione");
+			} else {
+				System.out.println("Il mezzo è già in manutenzione");
+			}
+
+		} finally {
+			em.close();
+		}
+	}
+	
+	public void fineManutenzione(Manutenzione m) {
+		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+		
+		try {
+			
+			Mezzo mezzoLetto = m.getMezzo();
+			if(mezzoLetto.getStatoOperativo().equals(StatoOperativo.MANUTENZIONE)) {
+				ManutenzioneDao manDao = new ManutenzioneDao();
+				mezzoLetto.setStatoOperativo(StatoOperativo.SERVIZIO);
+				m.setFineManutenzioneEffettiva(LocalDate.now());
+				MezzoDao mezzoDao = new MezzoDao();
+				mezzoDao.update(mezzoLetto);	
+				manDao.update(m);
+				System.out.println("Mezzo in servizio");
+			} else {
+				System.out.println("Il mezzo è già in servizio");
+			}
+
+		} finally {
+			em.close();
+		}
 	}
 }

@@ -20,9 +20,11 @@ import model.Utente;
 import utils.JpaUtil;
 import utils.StatoOperativo;
 import utils.TipoAbbonamento;
+import modelVeicoli.Manutenzione;
 import modelVeicoli.Mezzo;
 import modelVeicoli.Tram;
 import dao.MezzoDao;
+import dao.ManutenzioneDao;
 
 public class MainC {
 	private static final Logger l = LoggerFactory.getLogger(JpaUtil.class);
@@ -32,6 +34,7 @@ public class MainC {
 		DocViaggioDao docDao = new DocViaggioDao();
 		TesseraDao tessDao = new TesseraDao();
 		MezzoDao mezzoDao = new MezzoDao();
+		ManutenzioneDao manDao = new ManutenzioneDao();
 		
 		
 		//creazione tre utenti
@@ -81,7 +84,15 @@ public class MainC {
 		
 		
 		//recupera biglietti dal mezzo
-		System.out.println(mezzoDao.recuperaBigliettiVidimati(mezzoLetto, LocalDate.of(2019, 10, 10), LocalDate.now()));
+//		System.out.println(mezzoDao.recuperaBigliettiVidimati(mezzoLetto, LocalDate.of(2019, 10, 10), LocalDate.now()));
+		
+		
+		//manda in manutenzione prova
+//		mezzoDao.mandaInManutenzione(mezzoLetto);
+		
+		//fine manutenzione
+		Manutenzione manLetta = manDao.getByID(1l);
+		mezzoDao.fineManutenzione(manLetta);
 	}
 
 }

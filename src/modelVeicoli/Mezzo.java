@@ -22,9 +22,6 @@ import utils.StatoOperativo;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 
 public abstract class Mezzo {
-	/*
-	 * andrà fatto come dao--> -vidimazioneBiglietti(metodo)
-	 */
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,7 +65,8 @@ public abstract class Mezzo {
 	public StatoOperativo getStatoOperativo() {
 		return statoOperativo;
 	}
-
+	
+	
 	public void setStatoOperativo(StatoOperativo statoOperativo) {
 		this.statoOperativo = statoOperativo;
 	}
@@ -76,6 +74,11 @@ public abstract class Mezzo {
 	public void setTratta(String tratta) {
 		this.tratta = tratta;
 	}
+
+	public List<Manutenzione> getManutenzione() {
+		return manutenzione;
+	}
+	
 		
 
 }
