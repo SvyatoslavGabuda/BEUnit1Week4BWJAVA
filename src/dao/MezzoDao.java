@@ -1,6 +1,7 @@
 package dao;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -79,10 +80,31 @@ public class MezzoDao {
 				System.out.println("biglietto già vidimato");
 			}
 
-		} finally {
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			System.out.println(e);
+		}
+
+		finally {
 			em.close();
 		}
 
+	}
+
+	public List<Biglietto> recuperaBigliettiVidimati(Mezzo m, LocalDate dataInizio, LocalDate dataFine) {
+		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+
+		try {
+			Query q = em
+					.createQuery("SELECT b FROM Biglietto b WHERE b.mezzoUtilizzato = :m "
+							+ "AND b.dataVidimazione BETWEEN :dataInizio AND :dataFine")
+					.setParameter("m", m).setParameter("dataInizio", dataInizio).setParameter("dataFine", dataFine);
+
+			return q.getResultList();
+
+		} finally {
+			em.close();
+		}
 	}
 
 	public void manutenzione() {

@@ -1,9 +1,7 @@
 package modelVeicoli;
 
-import java.time.LocalDate;
-
+import java.util.List;
 import javax.persistence.Entity;
-
 import utils.StatoOperativo;
 
 @Entity
@@ -14,9 +12,9 @@ public class Tram extends Mezzo{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Tram(int capienza, StatoOperativo statoOperativo, LocalDate inizioManutenzione, LocalDate fineManutenzione,
+	public Tram(int capienza, StatoOperativo statoOperativo, List<Manutenzione> manutenzione,
 			String tratta) {
-		super(capienza, statoOperativo, inizioManutenzione, fineManutenzione, tratta);
+		super(capienza, statoOperativo, tratta);
 		// TODO Auto-generated constructor stub
 	}
 

@@ -23,35 +23,35 @@ import utils.StatoOperativo;
 
 public abstract class Mezzo {
 	/*
-	andrà fatto come dao--> -vidimazioneBiglietti(metodo)*/
-	
-	
+	 * andrà fatto come dao--> -vidimazioneBiglietti(metodo)
+	 */
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idMezzo;
-	
+
 	@Column(nullable = false)
 	private int capienza;
-	
+
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private StatoOperativo statoOperativo;
-	
-	
-	@OneToMany (mappedBy="mezzo")
+
+	@OneToMany(mappedBy = "mezzo")
 	private List<Manutenzione> manutenzione;
-	
-	@Column(nullable = false)
+
+	@Column
 	private String tratta;
-	
-	@OneToMany(mappedBy="mezzoUtilizzato")
+
+	@OneToMany(mappedBy = "mezzoUtilizzato")
 	private Set<Biglietto> listaBiglietti;
-	
-	public Mezzo() {}
-	
+
+	public Mezzo() {
+	}
+
 	public Mezzo(int capienza, StatoOperativo statoOperativo, String tratta) {
 		super();
-		
+
 		this.capienza = capienza;
 		this.statoOperativo = statoOperativo;
 		this.tratta = tratta;
@@ -73,8 +73,9 @@ public abstract class Mezzo {
 		this.statoOperativo = statoOperativo;
 	}
 
-	
-	
-	
-	
+	public void setTratta(String tratta) {
+		this.tratta = tratta;
+	}
+		
+
 }
