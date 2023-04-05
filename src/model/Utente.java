@@ -37,8 +37,7 @@ public String getNome() {
 }
 @Override
 public String toString() {
-	return "Utente [id_utente=" + id_utente + ", nome=" + nome + ", tessera=" + tessera + ", biglietti_aquistati="
-			 + "]";
+	return "Utente [id utente =" + id_utente + ", nome =" + nome + ", tessera =" + tessera +  "]\n ";
 }
 public void setNome(String nome) {
 	this.nome = nome;

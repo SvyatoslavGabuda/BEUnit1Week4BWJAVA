@@ -15,7 +15,7 @@ public class Autobus extends Mezzo {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Autobus(int capienza, StatoOperativo statoOperativo, List<Manutenzione> manutenzione, String tratta) {
+	public Autobus(int capienza, StatoOperativo statoOperativo, List<Manutenzione> manutenzione, Tratta tratta) {
 		super(capienza, statoOperativo, tratta);
 
 		// TODO Auto-generated constructor stub

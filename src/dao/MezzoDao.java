@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import modelVeicoli.Manutenzione;
 import model.Biglietto;
 import modelVeicoli.Mezzo;
+import modelVeicoli.Percorrenza;
 import utils.JpaUtil;
 import utils.StatoOperativo;
 
@@ -152,6 +153,30 @@ public class MezzoDao {
 
 		} finally {
 			em.close();
+		}
+	}
+	
+	public void partenza(Mezzo m) {
+		if (m.getTratta() != null) {
+			Percorrenza percorso = new Percorrenza();
+			PercorrenzaDao percoDao = new PercorrenzaDao();
+			percorso.setTratta_associata(m.getTratta());
+			percorso.setArrivo(LocalDate.now());
+			percoDao.salva(percorso);
+			
+		} else {
+			System.out.println("Il mezzo non dispone di una tratta");
+		}
+	}
+	
+	public void arrivo(Mezzo m) {
+		if (m.getTratta() != null) {
+			Percorrenza percorso = new Percorrenza();
+			percorso.setTratta_associata(m.getTratta());
+			percorso.setArrivo(LocalDate.now());
+			
+		} else {
+			System.out.println("Il mezzo non dispone di una tratta");
 		}
 	}
 }

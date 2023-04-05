@@ -85,9 +85,9 @@ public class Biglietto extends DocViaggio{
 
 	@Override
 	public String toString() {
-		return "Biglietto [durata=" + durata + ", getData_emissione()=" + getData_emissione() + ", getPrezzo()="
-				+ getPrezzo() + ", getVendutoDa()=" + getVendutoDa() + ", getUtente()=" + getUtente()
-				+ ", getId_biglietto()=" + getId_biglietto() + "]";
+		return "Biglietto [durata=" + durata + ", Data emissione =" + getData_emissione() + ", Prezzo = "
+				+ getPrezzo() + ", VendutoDa =" + getVendutoDa() + ", Utente =" + getUtente()
+				+ ", Id biglietto =" + getId_biglietto() + "]\n";
 	}
 
 	

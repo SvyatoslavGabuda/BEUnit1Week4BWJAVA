@@ -18,12 +18,7 @@ import utils.TipoAbbonamento;
 @Entity
 public class Abbonamento extends DocViaggio {
 	
-	@Override
-	public String toString() {
-		return "Abbonamento [durata=" + durata + ", tratta=" + tratta + ", tesseraAssociata=" + tesseraAssociata
-				+ ", getData_emissione()=" + getData_emissione() + ", getPrezzo()=" + getPrezzo() + ", getVendutoDa()="
-				+ getVendutoDa() + ", getUtente()=" + getUtente() + ", getId_biglietto()=" + getId_biglietto() + "]";
-	}
+	
 	@Enumerated(EnumType.STRING)
 	private TipoAbbonamento durata;
 	private String tratta;
@@ -55,6 +50,13 @@ public class Abbonamento extends DocViaggio {
 	}
 	public void set_tessera(Tessera tessera) {
 		this.tesseraAssociata = tessera;
+	}
+	
+	@Override
+	public String toString() {
+		return "Abbonamento [durata=" + durata + ", tratta=" + tratta + ", tesseraAssociata=" + tesseraAssociata
+				+ ", Data_emissione =" + getData_emissione() + ", Prezzo =" + getPrezzo() + ", VendutoDa ="
+				+ getVendutoDa() + ", Utente=" + getUtente() + ", Id biglietto=" + getId_biglietto() + "]\n";
 	}
 	
 }

@@ -13,7 +13,7 @@ public class Tram extends Mezzo{
 	}
 
 	public Tram(int capienza, StatoOperativo statoOperativo, List<Manutenzione> manutenzione,
-			String tratta) {
+			Tratta tratta) {
 		super(capienza, statoOperativo, tratta);
 		// TODO Auto-generated constructor stub
 	}

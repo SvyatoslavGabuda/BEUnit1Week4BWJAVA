@@ -2,6 +2,7 @@ package model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,8 +19,11 @@ import javax.persistence.ManyToOne;
 public abstract class DocViaggio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	// cambiare in id_doc_viaggio
 	private long id_biglietto;
+	@Column(nullable = false)
 	private LocalDate data_emissione;
+	@Column(nullable = false)
 	private double prezzo;
 	@ManyToOne
 	private Rivenditore vendutoDa;
@@ -33,11 +37,7 @@ public abstract class DocViaggio {
 	public void setData_emissione(LocalDate data_emissione) {
 		this.data_emissione = data_emissione;
 	}
-	@Override
-	public String toString() {
-		return "DocViaggio [id_biglietto=" + id_biglietto + ", data_emissione=" + data_emissione + ", prezzo=" + prezzo
-				+ ", vendutoDa=" + vendutoDa + ", utente=" + utente + "]";
-	}
+	
 	public double getPrezzo() {
 		return prezzo;
 	}
@@ -60,5 +60,10 @@ public abstract class DocViaggio {
 		return id_biglietto;
 	}
 	
+	@Override
+	public String toString() {
+		return "DocViaggio [id_biglietto=" + id_biglietto + ", data_emissione=" + data_emissione + ", prezzo=" + prezzo
+				+ ", vendutoDa=" + vendutoDa + ", utente=" + utente + "]\n";
+	}
 	
 }

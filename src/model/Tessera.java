@@ -30,12 +30,6 @@ public class Tessera {
 	
 	private List<Abbonamento> abbonamenti;
 
-	@Override
-	public String toString() {
-		return "Tessera [id_tessera=" + id_tessera + ", data_emissione=" + data_emissione + ", data_rinnovo="
-				+ data_rinnovo + ", data_scadenza=" + data_scadenza + ", " + ", abbonamenti="
-				+  "]";
-	}
 
 	public Tessera() {
 	}
@@ -47,8 +41,7 @@ public class Tessera {
 		this.data_scadenza = this.data_emissione.plusYears(1);
 		this.utente = utente;
 	}
-	// metodo aggiorna (dao)
-
+	
 	
 	//GETTER&SETTER
 	public LocalDate getData_emissione() {
@@ -95,6 +88,10 @@ public class Tessera {
 		return id_tessera;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Tessera [id tessera=" + id_tessera + ", data emissione=" + data_emissione + ", data rinnovo="
+				+ data_rinnovo + ", data scadenza=" + data_scadenza + "]\n";
+	}
 	
 }

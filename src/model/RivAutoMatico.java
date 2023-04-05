@@ -27,8 +27,7 @@ public void setStato(StatoRivenditoreAuto stato) {
 
 @Override
 public String toString() {
-	return "RivAutoMatico [stato=" + stato + ", getId_rivenditore()=" + getId_rivenditore() + ", getBiglietti_emessi()="
-			 + ", getAbbonamenti_emessi()="  + "]";
+	return "RivAutoMatico [stato=" + stato + ", Id_rivenditore =" + getId_rivenditore() + "] \n";
 }
 
 

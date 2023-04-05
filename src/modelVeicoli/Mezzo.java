@@ -1,6 +1,6 @@
 package modelVeicoli;
 
-import java.time.LocalDate;
+
 import java.util.List;
 import java.util.Set;
 
@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import model.Biglietto;
 import utils.StatoOperativo;
@@ -37,8 +38,8 @@ public abstract class Mezzo {
 	@OneToMany(mappedBy = "mezzo")
 	private List<Manutenzione> manutenzione;
 
-	@Column
-	private String tratta;
+	@OneToOne
+	private Tratta tratta;
 
 	@OneToMany(mappedBy = "mezzoUtilizzato")
 	private Set<Biglietto> listaBiglietti;
@@ -46,12 +47,13 @@ public abstract class Mezzo {
 	public Mezzo() {
 	}
 
-	public Mezzo(int capienza, StatoOperativo statoOperativo, String tratta) {
+	public Mezzo(int capienza, StatoOperativo statoOperativo, Tratta tratta) {
 		super();
 
 		this.capienza = capienza;
 		this.statoOperativo = statoOperativo;
 		this.tratta = tratta;
+//		this.setTratta(tratta);
 	}
 
 	public int getCapienza() {
@@ -71,8 +73,12 @@ public abstract class Mezzo {
 		this.statoOperativo = statoOperativo;
 	}
 
-	public void setTratta(String tratta) {
+	public void setTratta(Tratta tratta) {
 		this.tratta = tratta;
+	}
+
+	public Tratta getTratta() {
+		return tratta;
 	}
 
 	public List<Manutenzione> getManutenzione() {
