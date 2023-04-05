@@ -23,9 +23,11 @@ import utils.StatoOperativo;
 import utils.TipoAbbonamento;
 import modelVeicoli.Manutenzione;
 import modelVeicoli.Mezzo;
+import modelVeicoli.Percorrenza;
 import modelVeicoli.Tram;
 import modelVeicoli.Tratta;
 import dao.MezzoDao;
+import dao.PercorrenzaDao;
 import dao.ManutenzioneDao;
 
 public class MainC {
@@ -38,6 +40,7 @@ public class MainC {
 		MezzoDao mezzoDao = new MezzoDao();
 		ManutenzioneDao manDao = new ManutenzioneDao();
 		TrattaDao traDao = new TrattaDao();
+		PercorrenzaDao percoDao = new PercorrenzaDao();
 		
 		
 		//creazione tre utenti
@@ -72,23 +75,32 @@ public class MainC {
 //		System.out.println(docDao.getByID(1l));
 //		
 //		// creazione tratta
-//		Tratta tratta1 = new Tratta();
-//		tratta1.setZona_di_partenza("Milano");
-//		tratta1.setCapolinea("Palermo");
-//		tratta1.setTempo_medio_percorrenza(95);
-//	//	traDao.salva(tratta1);
-//		Tratta traLetto = traDao.getByID(1l);
+		Tratta tratta1 = new Tratta();
+		tratta1.setZona_di_partenza("Milano");
+		tratta1.setCapolinea("Palermo");
+		tratta1.setTempo_medio_percorrenza(95);
+	//	traDao.salva(tratta1);
+		Tratta traLetto = traDao.getByID(1l);
 //		
-//		//creazione mezzo
-//		Mezzo tram1 = new Tram();
-//		tram1.setCapienza(120);
-//		tram1.setStatoOperativo(StatoOperativo.SERVIZIO);
-//		tram1.setTratta(traLetto);
-//	//	mezzoDao.salva(tram1);
+		//creazione mezzo
+		Mezzo tram1 = new Tram();
+		tram1.setCapienza(120);
+		tram1.setStatoOperativo(StatoOperativo.SERVIZIO);
+		tram1.setTratta(traLetto);
+	//	mezzoDao.salva(tram1);
+	
+		
 //		
-//		//lettura mezzi - docViaggio
-//		Mezzo mezzoLetto = mezzoDao.getByID(2l);
+		//lettura mezzi - docViaggio
+		Mezzo mezzoLetto = mezzoDao.getByID(1l);
 //		
+		
+		// creare percorrenza
+		//mezzoDao.partenza(mezzoLetto);
+	//	mezzoDao.arrivo(mezzoLetto);
+		
+		Percorrenza percoLetta = percoDao.getByID(1l);
+		percoDao.calcolaDurataViaggioEffettiva(percoLetta);
 	
 //		Biglietto bigliettoLetto = (Biglietto) docDao.getByID(1l);
 		

@@ -1,5 +1,7 @@
 package dao;
 
+import java.time.Duration;
+
 import javax.persistence.EntityManager;
 
 import modelVeicoli.Mezzo;
@@ -59,5 +61,18 @@ public class PercorrenzaDao {
 		} finally {
 			em.close();
 		}
+	}
+	
+	public long calcolaDurataViaggioEffettiva(Percorrenza perc) {
+		
+		if (perc.getArrivo() != null) {
+//			durata = (perc.getArrivo().getLong() - percgetLong(null)) * 60000;
+			System.out.println(perc.getArrivo());
+			Duration diff = Duration.between(perc.getPartenza(), perc.getArrivo());
+			long durata = (long) Math.ceil(diff.getSeconds() / 60);
+			System.out.println("Minuti " + durata);
+			return durata;
+		}
+		return (Long) null;
 	}
 }

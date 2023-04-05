@@ -1,6 +1,7 @@
 package modelVeicoli;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,20 +16,20 @@ public class Percorrenza {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	@Column(nullable = false)
-	private LocalDate partenza;
-	private LocalDate arrivo;
+	private LocalDateTime partenza;
+	private LocalDateTime arrivo;
 	@ManyToOne
 	private Tratta tratta_associata;
-	public LocalDate getPartenza() {
+	public LocalDateTime getPartenza() {
 		return partenza;
 	}
-	public void setPartenza(LocalDate partenza) {
+	public void setPartenza(LocalDateTime partenza) {
 		this.partenza = partenza;
 	}
-	public LocalDate getArrivo() {
+	public LocalDateTime getArrivo() {
 		return arrivo;
 	}
-	public void setArrivo(LocalDate arrivo) {
+	public void setArrivo(LocalDateTime arrivo) {
 		this.arrivo = arrivo;
 	}
 	public Tratta getTratta_associata() {

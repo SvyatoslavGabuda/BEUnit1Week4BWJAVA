@@ -1,6 +1,7 @@
 package dao;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -161,22 +162,31 @@ public class MezzoDao {
 			Percorrenza percorso = new Percorrenza();
 			PercorrenzaDao percoDao = new PercorrenzaDao();
 			percorso.setTratta_associata(m.getTratta());
-			percorso.setArrivo(LocalDate.now());
+			percorso.setPartenza(LocalDateTime.now());
 			percoDao.salva(percorso);
-			
+			System.out.println("Mezzo partito \n");
 		} else {
 			System.out.println("Il mezzo non dispone di una tratta");
 		}
 	}
 	
 	public void arrivo(Mezzo m) {
+		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+		
 		if (m.getTratta() != null) {
-			Percorrenza percorso = new Percorrenza();
-			percorso.setTratta_associata(m.getTratta());
-			percorso.setArrivo(LocalDate.now());
+			PercorrenzaDao percoDao = new PercorrenzaDao();
 			
+			Query q = em.createQuery("SELECT p FROM Percorrenza p WHERE p.tratta_associata = :tratta AND p.arrivo = null")
+					.setParameter("tratta", m.getTratta());
+			
+			Percorrenza percorrenza = (Percorrenza) q.getSingleResult();	
+			percorrenza.setArrivo(LocalDateTime.now());
+			percoDao.update(percorrenza);
+			System.out.println("Mezzo arrivato a destinazione");
+			em.close();
 		} else {
 			System.out.println("Il mezzo non dispone di una tratta");
 		}
 	}
+	
 }
