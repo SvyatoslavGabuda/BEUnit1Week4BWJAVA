@@ -5,7 +5,8 @@ package model;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
-
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 
 
@@ -23,6 +24,7 @@ public class Abbonamento extends DocViaggio {
 				+ ", getData_emissione()=" + getData_emissione() + ", getPrezzo()=" + getPrezzo() + ", getVendutoDa()="
 				+ getVendutoDa() + ", getUtente()=" + getUtente() + ", getId_biglietto()=" + getId_biglietto() + "]";
 	}
+	@Enumerated(EnumType.STRING)
 	private TipoAbbonamento durata;
 	private String tratta;
 	@ManyToOne

@@ -1,12 +1,14 @@
 package model;
 
 import javax.persistence.Entity;
-
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import utils.StatoRivenditoreAuto;
 
 @Entity
 public class RivAutoMatico extends Rivenditore {
+	@Enumerated(EnumType.STRING)
 private StatoRivenditoreAuto stato;
 
 
