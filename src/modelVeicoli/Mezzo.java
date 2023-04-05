@@ -1,6 +1,8 @@
 package modelVeicoli;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,16 +13,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 
+import model.Biglietto;
 import utils.StatoOperativo;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 
 public abstract class Mezzo {
-	/*-capienza
-	-servizio/manutenzione (enum)
-	-periodomanutenzione
+	/*
 	andrà fatto come dao--> -vidimazioneBiglietti(metodo)*/
 	
 	
@@ -35,25 +37,23 @@ public abstract class Mezzo {
 	@Column(nullable = false)
 	private StatoOperativo statoOperativo;
 	
-	@Column(nullable = false)
-	private LocalDate inizioManutenzione;
 	
-	@Column(nullable = false)
-	private LocalDate fineManutenzione;
+	@OneToMany (mappedBy="mezzo")
+	private List<Manutenzione> manutenzione;
 	
 	@Column(nullable = false)
 	private String tratta;
 	
+	@OneToMany(mappedBy="mezzoUtilizzato")
+	private Set<Biglietto> listaBiglietti;
+	
 	public Mezzo() {}
 	
-	public Mezzo(int capienza, StatoOperativo statoOperativo, LocalDate inizioManutenzione,
-			LocalDate fineManutenzione, String tratta) {
+	public Mezzo(int capienza, StatoOperativo statoOperativo, String tratta) {
 		super();
 		
 		this.capienza = capienza;
 		this.statoOperativo = statoOperativo;
-		this.inizioManutenzione = inizioManutenzione;
-		this.fineManutenzione = fineManutenzione;
 		this.tratta = tratta;
 	}
 
@@ -73,21 +73,7 @@ public abstract class Mezzo {
 		this.statoOperativo = statoOperativo;
 	}
 
-	public LocalDate getInizioManutenzione() {
-		return inizioManutenzione;
-	}
-
-	public void setInizioManutenzione(LocalDate inizioManutenzione) {
-		this.inizioManutenzione = inizioManutenzione;
-	}
-
-	public LocalDate getFineManutenzione() {
-		return fineManutenzione;
-	}
-
-	public void setFineManutenzione(LocalDate fineManutenzione) {
-		this.fineManutenzione = fineManutenzione;
-	}
+	
 	
 	
 	

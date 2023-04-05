@@ -1,8 +1,11 @@
 package dao;
 
+import java.time.LocalDate;
+
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
-
+import model.Biglietto;
 import modelVeicoli.Mezzo;
 import utils.JpaUtil;
 
@@ -21,6 +24,7 @@ public class MezzoDao {
 			em.close();
 		}
 	}
+
 	public Mezzo getByID(long id) {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 		try {
@@ -32,6 +36,7 @@ public class MezzoDao {
 			em.close();
 		}
 	}
+
 	public void delete(Mezzo m) {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 		try {
@@ -44,6 +49,7 @@ public class MezzoDao {
 			em.close();
 		}
 	}
+
 	public void update(Mezzo m) {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 		try {
@@ -56,6 +62,29 @@ public class MezzoDao {
 			em.close();
 		}
 	}
-	public void vidimazione() {}
-	public void manutenzione() {}
+
+	public void vidimazione(Mezzo m, Biglietto b) {
+		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+
+		try {
+			if (b.isVidimato() == false) {
+
+				b.setVidimato(true);
+				b.setDataVidimazione(LocalDate.now());
+				b.setMezzoUtilizzato(m);
+				DocViaggioDao d = new DocViaggioDao();
+				d.update(b);
+				System.out.println("biglietto vidimato correttamente");
+			} else {
+				System.out.println("biglietto già vidimato");
+			}
+
+		} finally {
+			em.close();
+		}
+
+	}
+
+	public void manutenzione() {
+	}
 }

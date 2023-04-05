@@ -28,6 +28,7 @@ public class MainC {
 		DocViaggioDao docDao = new DocViaggioDao();
 		TesseraDao tessDao = new TesseraDao();
 		
+		
 		//creazione tre utenti
 		Utente u1 = new Utente();
 		u1.setNome("mario");
