@@ -19,7 +19,7 @@ public class Abbonamento extends DocViaggio {
 	private TipoAbbonamento durata;
 	private String tratta;
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	
 	private Tessera tesseraAssociata;
 	private LocalDate scandenza;
 

@@ -10,7 +10,7 @@ import utils.StatoRivenditoreAuto;
 @Entity
 public class RivAutoMatico extends Rivenditore {
 	@Enumerated(EnumType.STRING)
-	@Column(nullable = false)
+	@Column
 	private StatoRivenditoreAuto stato;
 
 //GETTER&SETTER
