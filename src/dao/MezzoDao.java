@@ -140,12 +140,12 @@ public class MezzoDao {
 			
 			if(m.getStatoOperativo().equals(StatoOperativo.MANUTENZIONE)) {
 				ManutenzioneDao manDao = new ManutenzioneDao();
+				MezzoDao mezzoDao = new MezzoDao();
 				m.setStatoOperativo(StatoOperativo.SERVIZIO);
 				Query q = em.createQuery("SELECT man FROM Manutenzione man WHERE man.mezzo = :m");
 				q.setParameter("m", m);
 				Manutenzione man = (Manutenzione) q.getSingleResult();
 				man.setFineManutenzioneEffettiva(LocalDate.now());
-				MezzoDao mezzoDao = new MezzoDao();
 				mezzoDao.update(m);	
 				manDao.update(man);
 				System.out.println("Mezzo in servizio");
