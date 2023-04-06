@@ -1,6 +1,5 @@
 package modelVeicoli;
 
-
 import java.util.List;
 import java.util.Set;
 
@@ -23,24 +22,18 @@ import utils.StatoOperativo;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 
 public abstract class Mezzo {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idMezzo;
-
 	@Column(nullable = false)
 	private int capienza;
-
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private StatoOperativo statoOperativo;
-
 	@OneToMany(mappedBy = "mezzo")
 	private List<Manutenzione> manutenzione;
-
 	@OneToOne
 	private Tratta tratta;
-
 	@OneToMany(mappedBy = "mezzoUtilizzato")
 	private Set<Biglietto> listaBiglietti;
 
@@ -53,7 +46,7 @@ public abstract class Mezzo {
 		this.capienza = capienza;
 		this.statoOperativo = statoOperativo;
 		this.tratta = tratta;
-//		this.setTratta(tratta);
+
 	}
 
 	public int getCapienza() {
@@ -67,8 +60,7 @@ public abstract class Mezzo {
 	public StatoOperativo getStatoOperativo() {
 		return statoOperativo;
 	}
-	
-	
+
 	public void setStatoOperativo(StatoOperativo statoOperativo) {
 		this.statoOperativo = statoOperativo;
 	}
@@ -84,7 +76,5 @@ public abstract class Mezzo {
 	public List<Manutenzione> getManutenzione() {
 		return manutenzione;
 	}
-	
-		
 
 }

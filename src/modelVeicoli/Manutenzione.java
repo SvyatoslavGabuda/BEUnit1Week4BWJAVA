@@ -13,23 +13,16 @@ import javax.persistence.ManyToOne;
 @Entity
 
 public class Manutenzione {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-
 	@Column(nullable = false)
 	private LocalDate inizioManutenzione;
-
 	@Column(nullable = false)
 	private LocalDate fineManutenzione;
-
 	@Column
 	private LocalDate fineManutenzioneEffettiva;
-
 	@ManyToOne
-	// @JoinColumn(name="mezzo") riga inutile, nel caso volessi cambiare nome alla
-	// colonna va fatto cosi
 	private Mezzo mezzo;
 
 	public LocalDate getInizioManutenzione() {

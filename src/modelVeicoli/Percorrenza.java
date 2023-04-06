@@ -20,23 +20,29 @@ public class Percorrenza {
 	private LocalDateTime arrivo;
 	@ManyToOne
 	private Tratta tratta_associata;
+
 	public LocalDateTime getPartenza() {
 		return partenza;
 	}
+
 	public void setPartenza(LocalDateTime partenza) {
 		this.partenza = partenza;
 	}
+
 	public LocalDateTime getArrivo() {
 		return arrivo;
 	}
+
 	public void setArrivo(LocalDateTime arrivo) {
 		this.arrivo = arrivo;
 	}
+
 	public Tratta getTratta_associata() {
 		return tratta_associata;
 	}
+
 	public void setTratta_associata(Tratta tratta_associata) {
 		this.tratta_associata = tratta_associata;
 	}
-	
+
 }

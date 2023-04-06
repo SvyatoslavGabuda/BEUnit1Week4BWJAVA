@@ -10,10 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-
 @Entity
 public class Tratta {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -27,55 +25,37 @@ public class Tratta {
 	private Mezzo mezzoUsato;
 	@OneToMany(mappedBy = "tratta_associata")
 	private List<Percorrenza> lista_percorrenze;
-	
-	public Tratta() {};
-	
-	
+
+	public Tratta() {
+	};
+
 	// GETTER E SETTER
 	public String getZona_di_partenza() {
 		return zona_di_partenza;
 	}
-	
+
 	public void setZona_di_partenza(String zona_di_partenza) {
 		this.zona_di_partenza = zona_di_partenza;
 	}
-	
+
 	public String getCapolinea() {
 		return capolinea;
 	}
-	
+
 	public void setCapolinea(String capolinea) {
 		this.capolinea = capolinea;
 	}
-	
+
 	public int getTempo_medio_percorrenza() {
 		return tempo_medio_percorrenza;
 	}
-	
+
 	public void setTempo_medio_percorrenza(int tempo_medio_percorrenza) {
 		this.tempo_medio_percorrenza = tempo_medio_percorrenza;
 	}
-	
-//	public LocalDate getPartenza() {
-//		return partenza;
-//	}
-//	
-//	public void setPartenza(LocalDate partenza) {
-//		this.partenza = partenza;
-//	}
-//	
-//	public LocalDate getArrivo() {
-//		return arrivo;
-//	}
-//	
-//	public void setArrivo(LocalDate arrivo) {
-//		this.arrivo = arrivo;
-//	}
-	
+
 	public long getId() {
 		return id;
 	}
-	
-	
-	
+
 }
