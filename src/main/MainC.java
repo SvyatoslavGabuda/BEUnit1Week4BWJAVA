@@ -59,9 +59,9 @@ public class MainC {
 //		utenteDao.salva(u4);
 		
 		//lettura utenti
-		Utente utenteLetto1 = utenteDao.getByID(1l);
-		Utente utenteLetto2 = utenteDao.getByID(2l);
-		Utente utenteLetto3 = utenteDao.getByID(3l);
+//		Utente utenteLetto1 = utenteDao.getByID(1l);
+//		Utente utenteLetto2 = utenteDao.getByID(2l);
+//		Utente utenteLetto3 = utenteDao.getByID(3l);
 //		
 ////		//rivenditori
 //		Rivenditore r = new RivAutoMatico();
@@ -92,15 +92,15 @@ public class MainC {
 		
 //		
 		//lettura mezzi - docViaggio
-		Mezzo mezzoLetto = mezzoDao.getByID(1l);
+		//Mezzo mezzoLetto = mezzoDao.getByID(1l);
 //		
 		
 		// creare percorrenza
 		//mezzoDao.partenza(mezzoLetto);
 	//	mezzoDao.arrivo(mezzoLetto);
 		
-		Percorrenza percoLetta = percoDao.getByID(1l);
-		percoDao.calcolaDurataViaggioEffettiva(percoLetta);
+		//Percorrenza percoLetta = percoDao.getByID(1l);
+	//	percoDao.calcolaDurataViaggioEffettiva(percoLetta);
 	
 //		Biglietto bigliettoLetto = (Biglietto) docDao.getByID(1l);
 		

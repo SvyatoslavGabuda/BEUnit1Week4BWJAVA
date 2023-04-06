@@ -23,10 +23,10 @@ public class Tessera {
 	private LocalDate data_rinnovo;
 	private LocalDate data_scadenza;
 	
-	@OneToOne
+	@OneToOne()
 	private Utente utente;
 	
-	@OneToMany(mappedBy="tesseraAssociata")
+	@OneToMany(mappedBy="tesseraAssociata",cascade = CascadeType.REMOVE)
 	
 	private List<Abbonamento> abbonamenti;
 

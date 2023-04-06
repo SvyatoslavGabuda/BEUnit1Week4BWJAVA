@@ -135,8 +135,7 @@ public class MezzoDao {
 	}
 	
 	public void fineManutenzione(Manutenzione m) {
-		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
-		
+		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();		
 		try {
 			
 			Mezzo mezzoLetto = m.getMezzo();
@@ -151,7 +150,6 @@ public class MezzoDao {
 			} else {
 				System.out.println("Il mezzo è già in servizio");
 			}
-
 		} finally {
 			em.close();
 		}
@@ -174,8 +172,7 @@ public class MezzoDao {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 		
 		if (m.getTratta() != null) {
-			PercorrenzaDao percoDao = new PercorrenzaDao();
-			
+			PercorrenzaDao percoDao = new PercorrenzaDao();			
 			Query q = em.createQuery("SELECT p FROM Percorrenza p WHERE p.tratta_associata = :tratta AND p.arrivo = null")
 					.setParameter("tratta", m.getTratta());
 			

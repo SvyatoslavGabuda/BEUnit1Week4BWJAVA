@@ -21,12 +21,12 @@ private long id_utente;
 	
 private String nome;
 
-@OneToOne(mappedBy = "utente")	
+@OneToOne(mappedBy = "utente", cascade = CascadeType.REMOVE)	
 @JoinColumn(name ="id_utente")
 
 private Tessera tessera;
 
-@OneToMany(mappedBy = "utente")
+@OneToMany(mappedBy = "utente", cascade = CascadeType.REMOVE)
 private Set<Biglietto> biglietti_aquistati;
 // cognome, datadinascita,residenza
 
