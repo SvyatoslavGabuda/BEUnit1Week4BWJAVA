@@ -134,18 +134,20 @@ public class MezzoDao {
 		}
 	}
 	
-	public void fineManutenzione(Manutenzione m) {
+	public void fineManutenzione(Mezzo m) {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();		
 		try {
 			
-			Mezzo mezzoLetto = m.getMezzo();
-			if(mezzoLetto.getStatoOperativo().equals(StatoOperativo.MANUTENZIONE)) {
+			if(m.getStatoOperativo().equals(StatoOperativo.MANUTENZIONE)) {
 				ManutenzioneDao manDao = new ManutenzioneDao();
-				mezzoLetto.setStatoOperativo(StatoOperativo.SERVIZIO);
-				m.setFineManutenzioneEffettiva(LocalDate.now());
+				m.setStatoOperativo(StatoOperativo.SERVIZIO);
+				Query q = em.createQuery("SELECT man FROM Manutenzione man WHERE man.mezzo = :m");
+				q.setParameter("m", m);
+				Manutenzione man = (Manutenzione) q.getSingleResult();
+				man.setFineManutenzioneEffettiva(LocalDate.now());
 				MezzoDao mezzoDao = new MezzoDao();
-				mezzoDao.update(mezzoLetto);	
-				manDao.update(m);
+				mezzoDao.update(m);	
+				manDao.update(man);
 				System.out.println("Mezzo in servizio");
 			} else {
 				System.out.println("Il mezzo è già in servizio");
