@@ -1,8 +1,12 @@
 package dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import model.Utente;
+import modelVeicoli.Tratta;
 import utils.JpaUtil;
 
 public class UtenteDao {
@@ -55,5 +59,19 @@ public class UtenteDao {
 			em.close();
 		}
 	}
+	
+	//Query per ottenere una lista di utenti che hanno validato un documento su un preciso mezzo su una precisa tratta
+	public List<Utente> utentiPerTratta(Tratta t){
+		
+		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+		
+		try {			
+			Query q = em.createQuery("SELECT d.utente FROM DocViaggio d WHERE d.mezzoUtilizzato = (SELECT m FROM Mezzo m WHERE m.tratta = :t)");
+			q.setParameter("t", t);
+			return q.getResultList();
+		} finally {
+			em.close();
+		}
+	} 
 
 }
