@@ -64,31 +64,31 @@ public class MainC {
 //		utenteDao.salva(u4);
 //		
 		//lettura utenti
-		Utente utenteLetto1 = utenteDao.getByID(1l);
-		Utente utenteLetto2 = utenteDao.getByID(2l);
-		Utente utenteLetto3 = utenteDao.getByID(3l);
-		Utente utenteLetto4 = utenteDao.getByID(4l);
-		Utente utenteLetto5 = utenteDao.getByID(5l);
-		Utente utenteLetto6 = utenteDao.getByID(6l);
-		Utente utenteLetto7 = utenteDao.getByID(7l);
-		Utente utenteLetto8 = utenteDao.getByID(8l);
-		Utente utenteLetto9 = utenteDao.getByID(9l);
-		Utente utenteLetto10 = utenteDao.getByID(10l);
-		Utente utenteLetto11 = utenteDao.getByID(11l);
-		Utente utenteLetto12 = utenteDao.getByID(12l);
-		
-		Tessera t1 = new Tessera(LocalDate.of(2022,1, 1),utenteLetto1);
-		Tessera t2 = new Tessera(LocalDate.of(2022,2, 1),utenteLetto2);
-		Tessera t3 = new Tessera(LocalDate.of(2022,3, 1),utenteLetto3);
-		Tessera t4 = new Tessera(LocalDate.of(2022,4, 1),utenteLetto4);
-		Tessera t5 = new Tessera(LocalDate.of(2022,5, 1),utenteLetto5);
-		Tessera t6 = new Tessera(LocalDate.of(2022,6, 1),utenteLetto6);
-		Tessera t7 = new Tessera(LocalDate.of(2022,7, 1),utenteLetto7);
-		Tessera t8 = new Tessera(LocalDate.of(2022,8, 1),utenteLetto8);
-		Tessera t9 = new Tessera(LocalDate.of(2022,9, 1),utenteLetto9);
-		Tessera t10 = new Tessera(LocalDate.of(2022,10, 1),utenteLetto10);
-		Tessera t11 = new Tessera(LocalDate.of(2022,11, 1),utenteLetto11);
-		Tessera t12 = new Tessera(LocalDate.of(2022,12, 1),utenteLetto12);
+//		Utente utenteLetto1 = utenteDao.getByID(1l);
+//		Utente utenteLetto2 = utenteDao.getByID(2l);
+//		Utente utenteLetto3 = utenteDao.getByID(3l);
+//		Utente utenteLetto4 = utenteDao.getByID(4l);
+//		Utente utenteLetto5 = utenteDao.getByID(5l);
+//		Utente utenteLetto6 = utenteDao.getByID(6l);
+//		Utente utenteLetto7 = utenteDao.getByID(7l);
+//		Utente utenteLetto8 = utenteDao.getByID(8l);
+//		Utente utenteLetto9 = utenteDao.getByID(9l);
+//		Utente utenteLetto10 = utenteDao.getByID(10l);
+//		Utente utenteLetto11 = utenteDao.getByID(11l);
+//		Utente utenteLetto12 = utenteDao.getByID(12l);
+//		
+//		Tessera t1 = new Tessera(LocalDate.of(2022,1, 1),utenteLetto1);
+//		Tessera t2 = new Tessera(LocalDate.of(2022,2, 1),utenteLetto2);
+//		Tessera t3 = new Tessera(LocalDate.of(2022,3, 1),utenteLetto3);
+//		Tessera t4 = new Tessera(LocalDate.of(2022,4, 1),utenteLetto4);
+//		Tessera t5 = new Tessera(LocalDate.of(2022,5, 1),utenteLetto5);
+//		Tessera t6 = new Tessera(LocalDate.of(2022,6, 1),utenteLetto6);
+//		Tessera t7 = new Tessera(LocalDate.of(2022,7, 1),utenteLetto7);
+//		Tessera t8 = new Tessera(LocalDate.of(2022,8, 1),utenteLetto8);
+//		Tessera t9 = new Tessera(LocalDate.of(2022,9, 1),utenteLetto9);
+//		Tessera t10 = new Tessera(LocalDate.of(2022,10, 1),utenteLetto10);
+//		Tessera t11 = new Tessera(LocalDate.of(2022,11, 1),utenteLetto11);
+//		Tessera t12 = new Tessera(LocalDate.of(2022,12, 1),utenteLetto12);
 		
 //		tessDao.salva(t1);
 //		tessDao.salva(t2);
@@ -102,33 +102,33 @@ public class MainC {
 //		tessDao.salva(t10);
 //		tessDao.salva(t11);
 //		tessDao.salva(t12);
-		Tessera tessLetta1 = tessDao.getByID(1l);
-		Tessera tessLetta2 = tessDao.getByID(2l);
-		Tessera tessLetta3 = tessDao.getByID(3l);
-		Tessera tessLetta4 = tessDao.getByID(4l);
-		Tessera tessLetta5 = tessDao.getByID(5l);
-		Tessera tessLetta6 = tessDao.getByID(6l);
-		Tessera tessLetta7 = tessDao.getByID(7l);
-		Tessera tessLetta8 = tessDao.getByID(8l);
-		Tessera tessLetta9 = tessDao.getByID(9l);
-		Tessera tessLetta10 = tessDao.getByID(10l);
-		Tessera tessLetta11 = tessDao.getByID(11l);
-		Tessera tessLetta12 = tessDao.getByID(12l);
+//		Tessera tessLetta1 = tessDao.getByID(1l);
+//		Tessera tessLetta2 = tessDao.getByID(2l);
+//		Tessera tessLetta3 = tessDao.getByID(3l);
+//		Tessera tessLetta4 = tessDao.getByID(4l);
+//		Tessera tessLetta5 = tessDao.getByID(5l);
+//		Tessera tessLetta6 = tessDao.getByID(6l);
+//		Tessera tessLetta7 = tessDao.getByID(7l);
+//		Tessera tessLetta8 = tessDao.getByID(8l);
+//		Tessera tessLetta9 = tessDao.getByID(9l);
+//		Tessera tessLetta10 = tessDao.getByID(10l);
+//		Tessera tessLetta11 = tessDao.getByID(11l);
+//		Tessera tessLetta12 = tessDao.getByID(12l);
 		
 //		
 ////		//rivenditori
-		Rivenditore r = new RivAutoMatico();
-		((RivAutoMatico) r).setStato(StatoRivenditoreAuto.ATTIVO);
-		Rivenditore r1 = new RivAutoRizzato();
-		((RivAutoRizzato) r1).setOrarioApertura(06.30);
-		((RivAutoRizzato) r1).setOrarioChiusura(20.30);
-		Rivenditore r2 = new RivAutoMatico();
-		((RivAutoMatico) r2).setStato(StatoRivenditoreAuto.ATTIVO);
-		Rivenditore rivLetto1 = rivDao.getByID(1l);
-		Rivenditore rivLetto2 = rivDao.getByID(3l);
-		Rivenditore rivLetto3 = rivDao.getByID(5l);
-		Rivenditore rivLetto4 = rivDao.getByID(6l);
-		Rivenditore rivLetto5 = rivDao.getByID(7l);
+//		Rivenditore r = new RivAutoMatico();
+//		((RivAutoMatico) r).setStato(StatoRivenditoreAuto.ATTIVO);
+//		Rivenditore r1 = new RivAutoRizzato();
+//		((RivAutoRizzato) r1).setOrarioApertura(06.30);
+//		((RivAutoRizzato) r1).setOrarioChiusura(20.30);
+//		Rivenditore r2 = new RivAutoMatico();
+//		((RivAutoMatico) r2).setStato(StatoRivenditoreAuto.ATTIVO);
+//		Rivenditore rivLetto1 = rivDao.getByID(1l);
+//		Rivenditore rivLetto2 = rivDao.getByID(3l);
+//		Rivenditore rivLetto3 = rivDao.getByID(5l);
+//		Rivenditore rivLetto4 = rivDao.getByID(6l);
+//		Rivenditore rivLetto5 = rivDao.getByID(7l);
 //		rivDao.emettiBiglietto(rivLetto1, 10, utenteLetto1.getId_utente());
 //		rivDao.emettiBiglietto(rivLetto1, 12, utenteLetto2.getId_utente());
 //		rivDao.emettiBiglietto(rivLetto1, 13, utenteLetto3.getId_utente());
@@ -192,37 +192,43 @@ public class MainC {
 //		rivDao.salva(r1);
 //		rivDao.salva(r2);
 		
-//		Tratta tratta1 = new Tratta();
-//		tratta1.setZona_di_partenza("Firenze");
-//		tratta1.setCapolinea("Palermo");
-//		tratta1.setTempo_medio_percorrenza(1200);
-//		Tratta tratta2 = new Tratta();
-//		tratta2.setZona_di_partenza("Roma");
-//		tratta2.setCapolinea("Palermo");
-//		tratta2.setTempo_medio_percorrenza(1300);
-//		Tratta tratta3 = new Tratta();
-//		tratta3.setZona_di_partenza("Torino");
-//		tratta3.setCapolinea("Palermo");
-//		tratta3.setTempo_medio_percorrenza(1400);
-//		Tratta tratta4 = new Tratta();
-//		tratta4.setCapolinea("Palermo");
-//		tratta4.setZona_di_partenza("Rimini");
-//		tratta4.setTempo_medio_percorrenza(1500);
-//		Tratta tratta5 = new Tratta();
-//		tratta5.setZona_di_partenza("Catania");
-//		tratta5.setCapolinea("Palermo");
-//		tratta5.setTempo_medio_percorrenza(10);
-//		Tratta tratta6 = new Tratta();
-//		tratta6.setZona_di_partenza("Bologna");
-//		tratta6.setCapolinea("Palermo");
-//		tratta6.setTempo_medio_percorrenza(800);
-//		
+		Tratta tratta1 = new Tratta();
+		tratta1.setZona_di_partenza("Firenze");
+		tratta1.setCapolinea("Palermo");
+		tratta1.setTempo_medio_percorrenza(1200);
+		Tratta tratta2 = new Tratta();
+		tratta2.setZona_di_partenza("Roma");
+		tratta2.setCapolinea("Palermo");
+		tratta2.setTempo_medio_percorrenza(1300);
+		Tratta tratta3 = new Tratta();
+		tratta3.setZona_di_partenza("Torino");
+		tratta3.setCapolinea("Palermo");
+		tratta3.setTempo_medio_percorrenza(1400);
+		Tratta tratta4 = new Tratta();
+		tratta4.setCapolinea("Palermo");
+		tratta4.setZona_di_partenza("Rimini");
+		tratta4.setTempo_medio_percorrenza(1500);
+		Tratta tratta5 = new Tratta();
+		tratta5.setZona_di_partenza("Catania");
+		tratta5.setCapolinea("Palermo");
+		tratta5.setTempo_medio_percorrenza(10);
+		Tratta tratta6 = new Tratta();
+		tratta6.setZona_di_partenza("Bologna");
+		tratta6.setCapolinea("Palermo");
+		tratta6.setTempo_medio_percorrenza(800);
+		Tratta tratta7 = new Tratta();
+		tratta7.setZona_di_partenza("Pisa");
+		tratta7.setCapolinea("Palermo");
+		tratta7.setTempo_medio_percorrenza(1200);
+		
+		
 //		traDao.salva(tratta1);
 //		traDao.salva(tratta2);
 //		traDao.salva(tratta3);
 //		traDao.salva(tratta4);
 //		traDao.salva(tratta5);
 //		traDao.salva(tratta6);
+//		traDao.salva(tratta7);
 		
 		Tratta traLetta1 = traDao.getByID(1l);
 		Tratta traLetta2= traDao.getByID(2l);
@@ -260,7 +266,7 @@ public class MainC {
 		m7.setCapienza(10100);
 		m7.setStatoOperativo(StatoOperativo.SERVIZIO);
 		m7.setTratta(traLetta7);
-		
+	
 //		mezzoDao.salva(m1);
 //		mezzoDao.salva(m2);
 //		mezzoDao.salva(m3);
@@ -285,16 +291,19 @@ public class MainC {
 //		mezzoDao.partenza(mezzoLetto7);
 		
 //		mezzoDao.arrivo(mezzoLetto1);
-		mezzoDao.arrivo(mezzoLetto2);
-		mezzoDao.arrivo(mezzoLetto3);
-		mezzoDao.arrivo(mezzoLetto4);
-		mezzoDao.arrivo(mezzoLetto5);
-		mezzoDao.arrivo(mezzoLetto6);
-		mezzoDao.arrivo(mezzoLetto7);
-		
+//		mezzoDao.arrivo(mezzoLetto2);
+//		mezzoDao.arrivo(mezzoLetto3);
+//		mezzoDao.arrivo(mezzoLetto4);
+//		mezzoDao.arrivo(mezzoLetto5);
+//		mezzoDao.arrivo(mezzoLetto6);
+//		mezzoDao.arrivo(mezzoLetto7);
+//		
 	//	mezzoDao.mandaInManutenzione(mezzoLetto1);
-		Manutenzione man1 = manDao.getByID(1);
+//		Manutenzione man1 = manDao.getByID(1);
 	//	mezzoDao.fineManutenzione(man1);
+		
+//		mezzoDao.mandaInManutenzione(mezzoLetto1);
+		mezzoDao.fineManutenzione(mezzoLetto1);
 		
 		
 		
