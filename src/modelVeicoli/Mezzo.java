@@ -84,6 +84,12 @@ public abstract class Mezzo {
 	public List<Manutenzione> getManutenzione() {
 		return manutenzione;
 	}
+
+	@Override
+	public String toString() {
+		return "Mezzo [idMezzo=" + idMezzo + ", capienza=" + capienza + ", statoOperativo=" + statoOperativo
+				+ "]";
+	}
 	
 		
 

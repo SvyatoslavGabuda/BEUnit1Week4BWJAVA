@@ -38,5 +38,10 @@ public class Percorrenza {
 	public void setTratta_associata(Tratta tratta_associata) {
 		this.tratta_associata = tratta_associata;
 	}
+	@Override
+	public String toString() {
+		return "Percorrenza [id=" + id + ", partenza=" + partenza + ", arrivo=" + arrivo + ", tratta_associata="
+				+ tratta_associata + "]";
+	}
 	
 }

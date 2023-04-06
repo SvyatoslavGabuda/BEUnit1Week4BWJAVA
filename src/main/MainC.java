@@ -1,6 +1,8 @@
 package main;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -81,23 +83,24 @@ public class MainC {
 		tratta1.setTempo_medio_percorrenza(95);
 	//	traDao.salva(tratta1);
 		Tratta traLetto = traDao.getByID(1l);
+		
 //		
 		//creazione mezzo
 		Mezzo tram1 = new Tram();
 		tram1.setCapienza(120);
 		tram1.setStatoOperativo(StatoOperativo.SERVIZIO);
 		tram1.setTratta(traLetto);
-	//	mezzoDao.salva(tram1);
+		//mezzoDao.salva(tram1);
 	
 		
 //		
 		//lettura mezzi - docViaggio
-		//Mezzo mezzoLetto = mezzoDao.getByID(1l);
+		Mezzo mezzoLetto = mezzoDao.getByID(1l);
 //		
-		
+	System.out.println(traDao.recuperaNumeroPercorrenza(traLetto, LocalDate.of(2022, 1, 1), LocalDate.of(2023, 12, 12)));
 		// creare percorrenza
 		//mezzoDao.partenza(mezzoLetto);
-	//	mezzoDao.arrivo(mezzoLetto);
+		//mezzoDao.arrivo(mezzoLetto);
 		
 		//Percorrenza percoLetta = percoDao.getByID(1l);
 	//	percoDao.calcolaDurataViaggioEffettiva(percoLetta);
@@ -119,6 +122,8 @@ public class MainC {
 //		//fine manutenzione
 //		Manutenzione manLetta = manDao.getByID(1l);
 //		mezzoDao.fineManutenzione(manLetta);
+		
+		
 	}
 
 }
