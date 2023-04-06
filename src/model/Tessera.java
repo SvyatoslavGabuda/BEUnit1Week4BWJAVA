@@ -12,38 +12,30 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-
 @Entity
 public class Tessera {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id_tessera;
-	// validità annuale
 	private LocalDate data_emissione;
 	private LocalDate data_rinnovo;
 	private LocalDate data_scadenza;
-	
 	@OneToOne()
 	private Utente utente;
-	
-	@OneToMany(mappedBy="tesseraAssociata",cascade = CascadeType.REMOVE)
-	
+	@OneToMany(mappedBy = "tesseraAssociata", cascade = CascadeType.REMOVE)
 	private List<Abbonamento> abbonamenti;
-
 
 	public Tessera() {
 	}
 
 	public Tessera(LocalDate data_emissione, Utente utente) {
-
 		this.data_emissione = data_emissione;
 		this.data_rinnovo = data_emissione;
 		this.data_scadenza = this.data_emissione.plusYears(1);
 		this.utente = utente;
 	}
-	
-	
-	//GETTER&SETTER
+
+	// GETTER&SETTER
 	public LocalDate getData_emissione() {
 		return data_emissione;
 	}
@@ -93,5 +85,5 @@ public class Tessera {
 		return "Tessera [id tessera=" + id_tessera + ", data emissione=" + data_emissione + ", data rinnovo="
 				+ data_rinnovo + ", data scadenza=" + data_scadenza + "]\n";
 	}
-	
+
 }

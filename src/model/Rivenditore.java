@@ -10,7 +10,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
-
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Rivenditore {
@@ -22,27 +21,18 @@ public abstract class Rivenditore {
 	@OneToMany(mappedBy = "vendutoDa")
 	private List<Biglietto> bigliettiEmessi;
 	@OneToMany(mappedBy = "vendutoDa")
-    private List<Abbonamento> abbonamentiEmessi;
-	
-//inserire nel dao
-	
-	
+	private List<Abbonamento> abbonamentiEmessi;
 
-
-	
 	public void aggiungiAiBigliettiEmessi(Biglietto biglietto) {
 		this.bigliettiEmessi.add(biglietto);
 	}
 
-	
 	@Override
 	public String toString() {
-		return "Rivenditore [id_rivenditore=" + id_rivenditore + ", n_biglietti_emessi=" + n_biglietti_emessi
-				+ "] \n";
+		return "Rivenditore [id_rivenditore=" + id_rivenditore + ", n_biglietti_emessi=" + n_biglietti_emessi + "] \n";
 	}
 
-
-	//GETTER&SETTER
+	// GETTER&SETTER
 	public long getN_biglietti_emessi() {
 		return n_biglietti_emessi;
 	}
@@ -78,6 +68,5 @@ public abstract class Rivenditore {
 	public long getId_rivenditore() {
 		return id_rivenditore;
 	};
-	
-	
+
 }
