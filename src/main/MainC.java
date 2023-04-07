@@ -285,12 +285,12 @@ public class MainC {
 //		mezzoDao.partenza(mezzoLetto7);
 		
 //		mezzoDao.arrivo(mezzoLetto1);
-		mezzoDao.arrivo(mezzoLetto2);
-		mezzoDao.arrivo(mezzoLetto3);
-		mezzoDao.arrivo(mezzoLetto4);
-		mezzoDao.arrivo(mezzoLetto5);
-		mezzoDao.arrivo(mezzoLetto6);
-		mezzoDao.arrivo(mezzoLetto7);
+//		mezzoDao.arrivo(mezzoLetto2);
+//		mezzoDao.arrivo(mezzoLetto3);
+//		mezzoDao.arrivo(mezzoLetto4);
+//		mezzoDao.arrivo(mezzoLetto5);
+//		mezzoDao.arrivo(mezzoLetto6);
+//		mezzoDao.arrivo(mezzoLetto7);
 		
 	//	mezzoDao.mandaInManutenzione(mezzoLetto1);
 		Manutenzione man1 = manDao.getByID(1);
