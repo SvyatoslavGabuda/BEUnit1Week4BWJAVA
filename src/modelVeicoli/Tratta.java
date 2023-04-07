@@ -77,7 +77,7 @@ public class Tratta {
 	public String toString() {
 		return "Tratta [id=" + id + ", zona_di_partenza=" + zona_di_partenza + ", capolinea=" + capolinea
 				+ ", tempo_medio_percorrenza=" + tempo_medio_percorrenza + ", mezzoUsato=" + mezzoUsato
-				+ "]";
+				+ "]\n";
 	}
 
 

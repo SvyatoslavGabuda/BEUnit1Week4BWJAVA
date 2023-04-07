@@ -322,60 +322,75 @@ public class MainC {
 
 		
 		
-//		
-//		//lettura Rivenditori
-//		Rivenditore rivLetto = rivDao.getByID(1l);
-//		
-//		// creazione biglietti
-////		rivDao.emettiBiglietto(rivLetto, 2, utenteLetto1.getId_utente());	
-//		System.out.println(docDao.getByID(1l));
-//		
-//		// creazione tratta
-//		Tratta tratta1 = new Tratta();
-//		tratta1.setZona_di_partenza("Milano");
-//		tratta1.setCapolinea("Palermo");
-//		tratta1.setTempo_medio_percorrenza(95);
-//	//	traDao.salva(tratta1);
-//		Tratta traLetto = traDao.getByID(1l);
-//		
-////		
-//		//creazione mezzo
-//		Mezzo tram1 = new Tram();
-//		tram1.setCapienza(120);
-//		tram1.setStatoOperativo(StatoOperativo.SERVIZIO);
-//		tram1.setTratta(traLetto);
-//		//mezzoDao.salva(tram1);
-//	
-//		
-////		
-//		//lettura mezzi - docViaggio
-//		Mezzo mezzoLetto = mezzoDao.getByID(1l);
-////		
-//	System.out.println(traDao.recuperaNumeroPercorrenza(traLetto, LocalDate.of(2022, 1, 1), LocalDate.of(2023, 12, 12)));
-//		// creare percorrenza
-//		//mezzoDao.partenza(mezzoLetto);
-		//mezzoDao.arrivo(mezzoLetto);
+   // Dimostrazione metodi:
 		
-		//Percorrenza percoLetta = percoDao.getByID(1l);
-	//	percoDao.calcolaDurataViaggioEffettiva(percoLetta);
-	
-//		Biglietto bigliettoLetto = (Biglietto) docDao.getByID(1l);
+		// Metodi DocViaggioDao:
 		
-//		
-//		//prova vidimazione
-////		mezzoDao.vidimazione(mezzoLetto, bigliettoLetto);
-//		
-//		
-//		//recupera biglietti dal mezzo
-////		System.out.println(mezzoDao.recuperaBigliettiVidimati(mezzoLetto, LocalDate.of(2019, 10, 10), LocalDate.now()));
-//		
-//		
-//		//manda in manutenzione prova
-////		mezzoDao.mandaInManutenzione(mezzoLetto);
-//		
-//		//fine manutenzione
-//		Manutenzione manLetta = manDao.getByID(1l);
-//		mezzoDao.fineManutenzione(manLetta);
+		//Ritorna la lista dei DocViaggio in base alla data di emissione in un periodo di tempo:
+		
+		//System.out.println(docDao.trovaDocinBaseAllaData(LocalDate.of(2022, 1, 1), LocalDate.of(2024, 1, 1)));
+		
+		//Ritorna i DocViaggio emessi da un rivenditore in un periodo di tempo
+		
+		// System.out.println(docDao.trovaDocinBaseDistibutoreInPeriodoTempo(LocalDate.of(2022, 1, 1), LocalDate.of(2024, 1, 1), 1));
+		
+		//controlla la validità dell abbonamento:
+		
+		//docDao.controllaAbbonamento((Abbonamento)docDao.getByID(45));
+		
+		//Ritorna i DocViaggio usati su una determinata tratta:
+		
+		//System.out.println(docDao.documentiPerTratta(traLetta1));
+		
+		//---------------------------------------------------------------------------------
+		//Metodi PercorrenzaDao:
+		
+		
+		//Ritorna il valore in minuti e stampa arrivo, minuti di una determinata Percorrenza
+		
+		//System.out.println(percoDao.calcolaDurataViaggioEffettiva(percoDao.getByID(1)));
+		
+		//---------------------------------------------------------------------------------
+		//Metodi TrattaDao:
+		
+		
+		// Ritorna la Lista delle percorrenza di una tratta in un periodo di tempo
+		
+		//System.out.println(traDao.recuperaListaPercorrenza(traLetta2, LocalDate.of(2022, 1, 1), LocalDate.of(2024, 1, 1)));
+		
+		//Ritorna il numero di percorrenze di una tratta in un periodo di tempo
+		
+		//System.out.println(traDao.recuperaNumeroPercorrenza(traLetta2, LocalDate.of(2022, 1, 1), LocalDate.of(2024, 1, 1)));
+		
+		//---------------------------------------------------------------------------------
+		//Metodi MezzoDao:
+		
+		//metodi per la partenza e l'arrivo del mezzo:
+		//il primo crea una Percorrenza della tratta associata al mezzo
+		//l'altro modifica tale Percorrenza dandole un tempo di arrivo
+		
+		//mezzoDao.partenza(mezzoLetto7);
+		//mezzoDao.arrivo(mezzoLetto7);
+		
+		//metodi per mandare un Mezzo in manutenzione e tirarlo fuori
+		//mezzoDao.mandaInManutenzione(mezzoLetto7);
+		//mezzoDao.fineManutenzione(mezzoLetto7);
+		
+		//Vidima un biglietto dato;
+		//mezzoDao.vidimazione(mezzoLetto7, (Biglietto)docDao.getByID(1));
+		
+		//
+		//ritorna la Lista dei Biglietti vidimati su un Mezzo in un periodo di tempo:
+		
+		// System.out.println(mezzoDao.recuperaBigliettiVidimati(mezzoLetto7, LocalDate.of(2022, 1, 1), LocalDate.of(2024, 1, 1)));
+		
+		//---------------------------------------------------------------------------------
+		//Metodi UtenteDao:
+		
+		//Ritorna Gli Utenti che hanno percorso una determinata tratta;
+		
+		//System.out.println(utenteDao.utentiPerTratta(traLetta7));
+		
 		
 		
 	}

@@ -69,7 +69,7 @@ public class TrattaDao {
 		}
 	}
 	
-	public List<Percorrenza> recuperaNumeroPercorrenza(Tratta t, LocalDate dataInizioInput, LocalDate dataFineInput) {
+	public List<Percorrenza> recuperaListaPercorrenza(Tratta t, LocalDate dataInizioInput, LocalDate dataFineInput) {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 		LocalDateTime dataInizio = LocalDateTime.of(dataInizioInput, LocalTime.of(0,0));
 		LocalDateTime dataFine = LocalDateTime.of(dataFineInput, LocalTime.of(23,59));
@@ -84,4 +84,19 @@ public class TrattaDao {
 			em.close();
 		}
 		}
+	public List<Percorrenza> recuperaNumeroPercorrenza(Tratta t, LocalDate dataInizioInput, LocalDate dataFineInput) {
+		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+		LocalDateTime dataInizio = LocalDateTime.of(dataInizioInput, LocalTime.of(0,0));
+		LocalDateTime dataFine = LocalDateTime.of(dataFineInput, LocalTime.of(23,59));
+		try {
+			Query q = em
+					.createQuery("SELECT Count(p) FROM Percorrenza p WHERE p.tratta_associata = :t AND p.partenza BETWEEN :dataInizio AND :dataFine")
+					.setParameter("t", t).setParameter("dataInizio", dataInizio).setParameter("dataFine", dataFine);
+			
+			return q.getResultList();
+			
+		} finally {
+			em.close();
+		}
+	}
 }
